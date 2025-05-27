@@ -1,0 +1,15 @@
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\bin\Debug\net8.0\ProjektRowery.exe
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\bin\Debug\net8.0\ProjektRowery.deps.json
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\bin\Debug\net8.0\ProjektRowery.runtimeconfig.json
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\bin\Debug\net8.0\ProjektRowery.dll
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\bin\Debug\net8.0\ProjektRowery.pdb
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.AssemblyInfoInputs.cache
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.AssemblyInfo.cs
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.csproj.CoreCompileInputs.cache
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.sourcelink.json
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.dll
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\refint\ProjektRowery.dll
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.pdb
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ProjektRowery.genruntimeconfig.cache
+C:\Users\oliwi\Desktop\ProjektPO\POProjekt\ProjektRowery\obj\Debug\net8.0\ref\ProjektRowery.dll
