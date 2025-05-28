@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjektRowery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a07d071e7309a1e35f2f0b10b0d10bddc360934")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d840cb2e004eb8f5e95b18f8e5dd446ad5e3ce88")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjektRowery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjektRowery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
