@@ -1,44 +1,20 @@
-﻿namespace ProjektRowery
+﻿using System.Diagnostics;
+
+namespace ProjektRowery
 {
     internal class Program
     {
-        enum Typ { standardowy, eleketryczny }
-        enum StatusRoweru { dostepny, wypozyczony, serwis}
-
-        class Rower
-        {
-            private int id;
-            private Typ typ;
-            private StatusRoweru status;
-            public Rower (int id, Typ typ)
-            {
-                this.id = id;
-                this.typ = typ;
-                this.status=StatusRoweru.dostepny;
-
-            }
-
-            public void wypozycz()
-            {
-                if (this.status==StatusRoweru.dostepny)
-                {
-                    Console.WriteLine("Pomyślnie wypożyczono rower!");
-                    this.status = StatusRoweru.wypozyczony;
-                }
-            }
-
-            public string sprawdzStan()
-            {
-                return $"{this.status}";
-
-            }
-        }
+       
 
         static void Main(string[] args)
         {
-            Rower rower = new Rower(1, Typ.standardowy);
-            rower.wypozycz();
-            Console.WriteLine(rower.sprawdzStan());
+            Rower rower0 = new Rower(1, Typ.standardowy);
+            Rower rower1 = new Rower(2, Typ.standardowy);
+            Rower rower2 = new Rower(3, Typ.standardowy);
+            Rower rower3 = new Rower(4, Typ.elektryczny);
+            Console.WriteLine(rower1.SprawdzStan());
+            rower1.Wypozycz();
+            Console.WriteLine(rower1.SprawdzStan());
 
         }
     }
