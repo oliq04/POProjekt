@@ -12,19 +12,18 @@ namespace ProjektRowery
 
         public int LiczbaMiejsc { get; private set; }
 
-        public string NazwaStacji { get; private set; }
+        public List<(string NazwaStacji, string NazwaMiasta)> StacjeInfo { get; private set; }
+            = new List<(string NazwaStacji, string NazwaMiasta)>();
 
         public int LiczbaWolnychMiejsc => LiczbaMiejsc - ListaRowerow.Count;
-        
 
-
-
-        public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, List<Rower> poczatkoweRowery)
+        public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, string nazwaMiasta, List<Rower> poczatkoweRowery)
         {
             LiczbaMiejsc = liczbaMiejsc;
-            NazwaStacji = nazwaStacji;
             ListaRowerow = poczatkoweRowery;
+            StacjeInfo.Add((nazwaStacji, nazwaMiasta));
         }
+    
 
         public bool CzyMoznaOddacRower()
         {
@@ -36,9 +35,12 @@ namespace ProjektRowery
             return ListaRowerow.Contains(nazwa);
         }
 
-        public List<Rower> roweryNaStacji()
+        public void roweryNaStacji()
         {
-            return ListaRowerow;
+            foreach (var row in ListaRowerow)
+            {
+                Console.WriteLine(row.ToString());
+            }
         }
 
     }
