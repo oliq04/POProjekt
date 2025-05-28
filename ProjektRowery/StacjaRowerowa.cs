@@ -36,5 +36,10 @@ namespace ProjektRowery
             return ListaRowerow.Contains(nazwa);
         }
 
+        public List<Rower> roweryNaStacji()
+        {
+            return ListaRowerow;
+        }
+
     }
 }
