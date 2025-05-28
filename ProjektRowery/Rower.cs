@@ -13,8 +13,8 @@ namespace ProjektRowery
 
     public class Rower
     {
-        private int id;
-        private Typ typ;
+        public int id;
+        public Typ typ;
         private StatusRoweru status;
        
         public Rower(int id, Typ typ)

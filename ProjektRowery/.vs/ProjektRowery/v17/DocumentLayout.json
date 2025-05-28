@@ -7,7 +7,11 @@
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,21 +22,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Uzytkownik.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "RelativeDocumentMoniker": "Uzytkownik.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "RelativeToolTip": "Uzytkownik.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwDEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T19:55:00.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Rower.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Rower.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Rower.cs",
               "RelativeDocumentMoniker": "Rower.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Rower.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Rower.cs",
               "RelativeToolTip": "Rower.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwBMAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T12:33:46.888Z",
               "EditorCaption": ""
@@ -43,15 +64,12 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T23:03:09.534Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-05-27T23:03:09.534Z",
+              "EditorCaption": ""
             }
           ]
         }

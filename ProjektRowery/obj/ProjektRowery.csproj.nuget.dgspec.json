@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\ProjektRowery.csproj": {}
+    "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\ProjektRowery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\ProjektRowery.csproj": {
+    "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\ProjektRowery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\ProjektRowery.csproj",
+        "projectUniqueName": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\ProjektRowery.csproj",
         "projectName": "ProjektRowery",
-        "projectPath": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\ProjektRowery.csproj",
-        "packagesPath": "C:\\Users\\oliwi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\obj\\",
+        "projectPath": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\ProjektRowery.csproj",
+        "packagesPath": "C:\\Users\\XXXX\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\oliwi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XXXX\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -65,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
