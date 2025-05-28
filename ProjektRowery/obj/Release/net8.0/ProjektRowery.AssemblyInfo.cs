@@ -12,13 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjektRowery")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f21e1ba5da5c2e0c3412fc6d857de4fb75ca8d09")]
-=======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fe21529a7542deff835547588c02e32f6618c21")]
->>>>>>> 1cc6c519f0eff9935b2ab41081bca6ab37f30901
 [assembly: System.Reflection.AssemblyProductAttribute("ProjektRowery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjektRowery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
