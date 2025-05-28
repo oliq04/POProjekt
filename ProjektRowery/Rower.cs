@@ -16,12 +16,13 @@ namespace ProjektRowery
         private int id;
         private Typ typ;
         private StatusRoweru status;
-
+       
         public Rower(int id, Typ typ)
         {
             this.id = id;
             this.typ = typ;
             this.status = StatusRoweru.dostepny;
+            
         }
 
         public void Wypozycz()
@@ -45,6 +46,20 @@ namespace ProjektRowery
         public void ZglosUsterke()
         {
             this.status = StatusRoweru.serwisowany;
+        }
+
+        public void zwrocRower()
+        {
+            if (this.status != StatusRoweru.dostepny)
+            {
+                this.status = StatusRoweru.dostepny;
+                Console.WriteLine("Pomyślnie zwrócono rower");
+            }
+            else
+            {
+                Console.WriteLine("Błąd, nie mozesz zwrocic dostępnego roweru");
+            }
+
         }
     }
 }
