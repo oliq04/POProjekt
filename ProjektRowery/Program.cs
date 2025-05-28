@@ -16,6 +16,11 @@ namespace ProjektRowery
             rower1.ZglosUsterke();
             Console.WriteLine(rower1.SprawdzStan());
             rower1.Wypozycz();
+
+            List<Rower> rowery = new List<Rower>();
+            rowery.Add(rower0);
+
+            StacjaRowerowa Stacja1 = new StacjaRowerowa(15,"Stacja na Pogodnej", rowery);
             
 
         }

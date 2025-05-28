@@ -8,7 +8,7 @@ namespace ProjektRowery
 {
     class StacjaRowerowa
     {
-        public List<string> ListaRowerow { get; private set; }
+        public List<Rower> ListaRowerow { get; private set; }
 
         public int LiczbaMiejsc { get; private set; }
 
@@ -19,11 +19,11 @@ namespace ProjektRowery
 
 
 
-        public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, List<string> poczatkoweRowery = null)
+        public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, List<Rower> poczatkoweRowery)
         {
             LiczbaMiejsc = liczbaMiejsc;
             NazwaStacji = nazwaStacji;
-            ListaRowerow = poczatkoweRowery ?? new List<string>();
+            ListaRowerow = poczatkoweRowery;
         }
 
         public bool CzyMoznaOddacRower()
@@ -31,7 +31,7 @@ namespace ProjektRowery
             return LiczbaWolnychMiejsc > 0;
         }
 
-        public  bool czyMoznaWypozyczycRower(string nazwa)
+        public  bool czyMoznaWypozyczycRower(Rower nazwa)
         {
             return ListaRowerow.Contains(nazwa);
         }
