@@ -24,18 +24,21 @@ namespace ProjektRowery
 
 
             StacjaRowerowa Stacja1 = new StacjaRowerowa(15,"Stacja na Pogodnej", rowery);
-            
-
 
 
             Console.WriteLine("\nPróba wypożyczenia roweru0:");
+            Wypozyczenie wypozyczenieGabriela = new Wypozyczenie(rower0);
             gabriel.WypozyczRower(rower0);
             Console.WriteLine($"Stan roweru0 po wypożyczeniu: {rower0.SprawdzStan()}");
 
-            // Test zwrotu roweru
+            System.Threading.Thread.Sleep(22000); // 2 sekundy symulacji
+
             Console.WriteLine("\nPróba zwrotu roweru0:");
+            wypozyczenieGabriela.ZakonczWypozyczenie();
             gabriel.ZwrocRower(rower0);
             Console.WriteLine($"Stan roweru0 po zwrocie: {rower0.SprawdzStan()}");
+
+            Console.WriteLine($"\nCzas wypożyczenia roweru0: {wypozyczenieGabriela.ObliczCzas().TotalSeconds} sekund");
         }
     }
 }
