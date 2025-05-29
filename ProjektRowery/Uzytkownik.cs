@@ -22,7 +22,7 @@ namespace ProjektRowery
             this.historiaWypozyczen = new List<Rower>();
         }
             
-        public void WypozyczRower(StacjaRowerowa stacja, Rower rower) //Trzeba zrobić z której stacji jaki rower  //StacjaRowerowa stacja
+        public void WypozyczRower(StacjaRowerowa stacja, Rower rower) 
         {
             if (rower.SprawdzStan() == "dostepny")
             {

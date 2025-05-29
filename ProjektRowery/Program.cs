@@ -33,20 +33,34 @@ namespace ProjektRowery
             roweryAugustow.Add(Dzieciecy);
             roweryAugustow.Add(Miejski);
             roweryAugustow.Add(Wyczynowy);
+            roweryAugustow.Add(Sportowy);
+            roweryAugustow.Add(Mountain);
 
             StacjaRowerowa StacjaAugustow = new StacjaRowerowa(5, "Stacja Postiw", "Augustow", roweryAugustow);
             StacjaRowerowa StacjaPolitechnika = new StacjaRowerowa(5, "Stacja Politechnika", "Białystok", roweryPolitechnika);
 
             StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
-
+            StacjaAugustow.roweryNaStacji(StacjaAugustow);
             
             user2.WypozyczRower(StacjaPolitechnika,Cross);
 
             StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
 
-            user2.ZwrocRower(StacjaPolitechnika,Cross);
+            try
+            {
+                user2.ZwrocRower(StacjaAugustow, Cross);
 
-            StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
+            }
+
+            catch (StacjaPrzepelnionaException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+            
+            StacjaAugustow.roweryNaStacji(StacjaAugustow);
+
+
             //user2.ZwrocRower(StacjaPolitechnika, Elektryk); //Tutaj powinno wyrzucic wyjatek w klasie Rower.cs bo pomimo ze jest błąd, to program dalej sie wykonuje
 
 

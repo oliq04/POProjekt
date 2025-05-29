@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace ProjektRowery
 {
+    public class StacjaRowerowaExceptions : Exception
+    {
+        public StacjaRowerowaExceptions() { }
+        public StacjaRowerowaExceptions(string message) : base(message) { }
+
+
+    }
+
+    public class StacjaPrzepelnionaException : StacjaRowerowaExceptions
+    {
+        public StacjaPrzepelnionaException() { }
+        public StacjaPrzepelnionaException(string message):base(message) { }
+    }
+
+
+
     public class StacjaRowerowa
     {
+
         public List<Rower> ListaRowerow { get; private set; }
 
         public int LiczbaMiejsc { get; private set; }
@@ -35,7 +52,15 @@ namespace ProjektRowery
         }
         public void DodajDoListyDostepnych(Rower rower)
         {
-            ListaRowerow.Add(rower);
+            if (LiczbaWolnychMiejsc > 0)
+            {
+                ListaRowerow.Add(rower);
+            }
+            else
+            {
+                throw new StacjaPrzepelnionaException("\nStacja jest przepełniona! Udaj się do innej, lub spróbuj ponownie za jakiś czas...");
+            }
+            
         }
     
 
