@@ -12,6 +12,7 @@ namespace ProjektRowery
         private string imie;
         private string nazwisko;
         private List<Rower> historiaWypozyczen;
+        private int saldo; //trzeba bedzie zaimplementowac logike obciazania salda
 
         public Uzytkownik(int id, string imie, string nazwisko)
         {
@@ -21,11 +22,14 @@ namespace ProjektRowery
             this.historiaWypozyczen = new List<Rower>();
         }
             
-        public void WypozyczRower(Rower rower) //Trzeba zrobić z której stacji jaki rower  //StacjaRowerowa stacja
+        public void WypozyczRower(StacjaRowerowa stacja, Rower rower) //Trzeba zrobić z której stacji jaki rower  //StacjaRowerowa stacja
         {
             if (rower.SprawdzStan() == "dostepny")
             {
                 rower.Wypozycz();
+
+                stacja.UsunZListyDostepnych(rower);
+
                 historiaWypozyczen.Add(rower);
                 Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id}");
             }

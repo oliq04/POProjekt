@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjektRowery
 {
-    class StacjaRowerowa
+    public class StacjaRowerowa
     {
         public List<Rower> ListaRowerow { get; private set; }
 
@@ -22,6 +22,11 @@ namespace ProjektRowery
             LiczbaMiejsc = liczbaMiejsc;
             ListaRowerow = poczatkoweRowery;
             StacjeInfo.Add((nazwaStacji, nazwaMiasta));
+        }
+
+        public void UsunZListyDostepnych(Rower rower)
+        {
+            ListaRowerow.Remove(rower);
         }
     
 

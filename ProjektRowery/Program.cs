@@ -25,9 +25,9 @@ namespace ProjektRowery
             StacjaPolitechnika.roweryNaStacji();
 
             
-            user2.WypozyczRower(Cross);
+            user2.WypozyczRower(StacjaPolitechnika,Cross);
 
-            StacjaPolitechnika.roweryNaStacji(); //Bug do naprawienia: Po wypożyczeniu rower dalej pojawia sie na stacji
+            StacjaPolitechnika.roweryNaStacji(); 
 
 
 
