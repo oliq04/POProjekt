@@ -17,16 +17,25 @@ namespace ProjektRowery
 
         public int LiczbaWolnychMiejsc => LiczbaMiejsc - ListaRowerow.Count;
 
+        private string nazwaStacji;
+        private string nazwaMiasta;
+
         public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, string nazwaMiasta, List<Rower> poczatkoweRowery)
         {
             LiczbaMiejsc = liczbaMiejsc;
             ListaRowerow = poczatkoweRowery;
             StacjeInfo.Add((nazwaStacji, nazwaMiasta));
+            this.nazwaStacji=nazwaStacji;
+            this.nazwaMiasta= nazwaMiasta;
         }
 
         public void UsunZListyDostepnych(Rower rower)
         {
             ListaRowerow.Remove(rower);
+        }
+        public void DodajDoListyDostepnych(Rower rower)
+        {
+            ListaRowerow.Add(rower);
         }
     
 
@@ -40,9 +49,10 @@ namespace ProjektRowery
             return ListaRowerow.Contains(nazwa);
         }
 
-        public void roweryNaStacji()
+        public void roweryNaStacji(StacjaRowerowa stacja)
         {
-            Console.WriteLine("Dostepne rowery na stacji:");
+            Console.WriteLine("\n");
+            Console.WriteLine($"Dostepne rowery na stacji {stacja.nazwaStacji} w mieście {stacja.nazwaMiasta}:");
             foreach (var row in ListaRowerow)
             {
                 Console.WriteLine(row.Marka());

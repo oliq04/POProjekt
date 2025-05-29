@@ -14,20 +14,45 @@ namespace ProjektRowery
             Rower Cross = new Rower(1, Typ.standardowy, "Cross");
             Rower Mountain = new Rower (2, Typ.standardowy, "Cube");
             Rower Elektryk = new Rower (3, Typ.standardowy, "Trek");
+            Rower Sportowy = new Rower(4, Typ.standardowy, "Cube");
+            Rower Wyczynowy = new Rower(5, Typ.standardowy, "Cross");
+            Rower Miejski = new Rower(6, Typ.standardowy, "Bulls");
+            Rower Dzieciecy = new Rower(7, Typ.standardowy, "Wigry");
+
+
+
+
+
             List<Rower> roweryPolitechnika = new List<Rower>();
+            List<Rower> roweryAugustow = new List<Rower>();
 
             roweryPolitechnika.Add(Elektryk);
             roweryPolitechnika.Add (Mountain);
             roweryPolitechnika.Add(Cross);
 
-            StacjaRowerowa StacjaPolitechnika = new StacjaRowerowa(15, "Stacja Politechnika", "Białystok", roweryPolitechnika);
+            roweryAugustow.Add(Dzieciecy);
+            roweryAugustow.Add(Miejski);
+            roweryAugustow.Add(Wyczynowy);
 
-            StacjaPolitechnika.roweryNaStacji();
+            StacjaRowerowa StacjaAugustow = new StacjaRowerowa(5, "Stacja Postiw", "Augustow", roweryAugustow);
+            StacjaRowerowa StacjaPolitechnika = new StacjaRowerowa(5, "Stacja Politechnika", "Białystok", roweryPolitechnika);
+
+            StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
 
             
             user2.WypozyczRower(StacjaPolitechnika,Cross);
 
-            StacjaPolitechnika.roweryNaStacji(); 
+            StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
+
+            user2.ZwrocRower(StacjaPolitechnika,Cross);
+
+            StacjaPolitechnika.roweryNaStacji(StacjaPolitechnika);
+            //user2.ZwrocRower(StacjaPolitechnika, Elektryk); //Tutaj powinno wyrzucic wyjatek w klasie Rower.cs bo pomimo ze jest błąd, to program dalej sie wykonuje
+
+
+
+
+
 
 
 

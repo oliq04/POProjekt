@@ -8,9 +8,9 @@ namespace ProjektRowery
 {
     class Platnosc
     {
-        int stawka;
+        double stawka = 1.2;
         int czas_w_min;
-        int saldo = 0;
+        double saldo = 0;
         public Platnosc (int stawka, int czas_w_min)
         {
             this.stawka = stawka;

@@ -31,7 +31,7 @@ namespace ProjektRowery
                 stacja.UsunZListyDostepnych(rower);
 
                 historiaWypozyczen.Add(rower);
-                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id}");
+                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id} {rower.Marka()}");
             }
             else
             {
@@ -39,10 +39,11 @@ namespace ProjektRowery
             }
         }
 
-        public void ZwrocRower(Rower rower)
+        public void ZwrocRower(StacjaRowerowa stacja,Rower rower)
         {
             rower.zwrocRower();
-            Console.WriteLine($"{imie} zwrócił rower ID: {rower.SprawdzStan()}");
+            stacja.DodajDoListyDostepnych(rower);
+            Console.WriteLine($"{imie} zwrócił rower ID: {rower.id} {rower.Marka()}");
         }
 
         public void WyswietlHistorie()

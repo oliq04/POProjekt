@@ -35,12 +35,13 @@ namespace ProjektRowery
         {
             if (this.status == StatusRoweru.dostepny)
             {
-                Console.WriteLine("Pomyślnie wypożyczono rower!");
+                Console.WriteLine("\nPomyślnie wypożyczono rower!");
                 this.status = StatusRoweru.wypozyczony;
+
             }
             else
             {
-                Console.WriteLine("Rower nie jest dostępny do wypożyczenia.");
+                Console.WriteLine("\nRower nie jest dostępny do wypożyczenia.");
             }
         }
 
@@ -60,11 +61,11 @@ namespace ProjektRowery
             {
                 this.status = StatusRoweru.dostepny;
 
-                Console.WriteLine("Pomyślnie zwrócono rower");
+                Console.WriteLine("\nPomyślnie zwrócono rower");
             }
             else
             {
-                Console.WriteLine("Błąd, nie mozesz zwrocic dostępnego roweru");
+                Console.WriteLine("\nBłąd, nie mozesz zwrocic dostępnego roweru");
             }
 
         }
