@@ -16,13 +16,19 @@ namespace ProjektRowery
         public int id;
         public Typ typ;
         private StatusRoweru status;
+        private string marka;
        
-        public Rower(int id, Typ typ)
+        public Rower(int id, Typ typ, string marka)
         {
             this.id = id;
             this.typ = typ;
             this.status = StatusRoweru.dostepny;
-            
+            this.marka = marka;
+        }
+
+        public string Marka()
+        {
+            return this.marka;
         }
 
         public void Wypozycz()

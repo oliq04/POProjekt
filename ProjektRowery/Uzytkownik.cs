@@ -20,18 +20,18 @@ namespace ProjektRowery
             this.nazwisko = nazwisko;
             this.historiaWypozyczen = new List<Rower>();
         }
-
-        public void WypozyczRower(Rower rower)
+            
+        public void WypozyczRower(Rower rower) //Trzeba zrobić z której stacji jaki rower  //StacjaRowerowa stacja
         {
             if (rower.SprawdzStan() == "dostepny")
             {
                 rower.Wypozycz();
                 historiaWypozyczen.Add(rower);
-                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.SprawdzStan()}");
+                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id}");
             }
             else
             {
-                Console.WriteLine("Nie można wypożyczyć roweru, ponieważ nie jest dostępny.");
+                Console.WriteLine("Nie można wypożyczyć roweru, ponieważ nie jest dostępny. Wybierz spośród dostępnych:");
             }
         }
 

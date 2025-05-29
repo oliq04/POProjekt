@@ -37,9 +37,10 @@ namespace ProjektRowery
 
         public void roweryNaStacji()
         {
+            Console.WriteLine("Dostepne rowery na stacji:");
             foreach (var row in ListaRowerow)
             {
-                Console.WriteLine(row.ToString());
+                Console.WriteLine(row.Marka());
             }
         }
 
