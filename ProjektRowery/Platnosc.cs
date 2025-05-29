@@ -17,6 +17,7 @@ namespace ProjektRowery
             this.czas_w_min = czas_w_min;
         }
 
+
         public double ObliczKwote()
         {
             if (typRoweru == Typ.standardowy)
