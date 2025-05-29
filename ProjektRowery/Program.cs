@@ -8,6 +8,7 @@ namespace ProjektRowery
 
         static void Main(string[] args)
         {
+            /*
             Uzytkownik user2 = new Uzytkownik(2, "Kamil", "Wiertarka");
             Uzytkownik user3 = new Uzytkownik(3, "Oliwier", "Zyskowski");
             
@@ -58,7 +59,7 @@ namespace ProjektRowery
             }
             
             
-            StacjaAugustow.roweryNaStacji(StacjaAugustow);
+            StacjaAugustow.roweryNaStacji(StacjaAugustow);*/
 
 
             //user2.ZwrocRower(StacjaPolitechnika, Elektryk); //Tutaj powinno wyrzucic wyjatek w klasie Rower.cs bo pomimo ze jest błąd, to program dalej sie wykonuje
@@ -106,6 +107,23 @@ namespace ProjektRowery
 
            Console.WriteLine($"\nCzas wypożyczenia roweru0: {wypozyczenieGabriela.ObliczCzas().TotalSeconds} sekund");
             */
+
+            Uzytkownik uzytkownik = new Uzytkownik(1, "Jan", "Kowalski");
+
+            uzytkownik.DodajSaldo(100); // Dodajesz saldo użytkownikowi
+            uzytkownik.WypiszSaldo(); // Wyświetlasz saldo użytkownika
+            
+            Rower r = new Rower(1, Typ.standardowy, "Giant"); //standardowy, elektryczny
+
+            // Przekazujesz do płatności typ roweru:
+            Platnosc platnosc = new Platnosc(r.ZwrocTypEnum(), 45);
+            
+
+            // Obliczasz koszt:
+            double koszt = platnosc.ObliczKwote();
+            Console.WriteLine($"Do zapłaty: {koszt} zł");
+            uzytkownik.OplacRower(koszt);
+            
         }
     }
 }

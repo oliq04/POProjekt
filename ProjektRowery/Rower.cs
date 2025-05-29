@@ -71,5 +71,9 @@ namespace ProjektRowery
             }
 
         }
+        public Typ ZwrocTypEnum()
+        {
+            return this.typ;
+        }
     }
 }
