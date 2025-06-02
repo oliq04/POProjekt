@@ -16,25 +16,34 @@ namespace ProjektRowery
         public int id;
         public Typ typ;
         private StatusRoweru status;
+        private string marka;
        
-        public Rower(int id, Typ typ)
+        public Rower(int id, Typ typ, string marka)
         {
             this.id = id;
             this.typ = typ;
             this.status = StatusRoweru.dostepny;
-            
+            this.marka = marka;
+        }
+
+        public string Marka()
+        {
+            return this.marka;
         }
 
         public void Wypozycz()
         {
             if (this.status == StatusRoweru.dostepny)
             {
-                Console.WriteLine("Pomyślnie wypożyczono rower!");
+                
                 this.status = StatusRoweru.wypozyczony;
+
+                Console.WriteLine("\nPomyślnie wypożyczono rower!");
+
             }
             else
             {
-                Console.WriteLine("Rower nie jest dostępny do wypożyczenia.");
+                Console.WriteLine("\nRower nie jest dostępny do wypożyczenia.");
             }
         }
 
@@ -53,13 +62,18 @@ namespace ProjektRowery
             if (this.status != StatusRoweru.dostepny)
             {
                 this.status = StatusRoweru.dostepny;
-                Console.WriteLine("Pomyślnie zwrócono rower");
+
+               
             }
             else
             {
-                Console.WriteLine("Błąd, nie mozesz zwrocic dostępnego roweru");
+                Console.WriteLine("\nBłąd, nie mozesz zwrocic dostępnego roweru"); // tu wyrzucić wyjątek
             }
 
+        }
+        public Typ ZwrocTypEnum()
+        {
+            return this.typ;
         }
     }
 }

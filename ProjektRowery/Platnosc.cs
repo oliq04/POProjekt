@@ -8,18 +8,30 @@ namespace ProjektRowery
 {
     class Platnosc
     {
-        int stawka;
-        int czas_w_min;
-        int saldo = 0;
-        public Platnosc (int stawka, int czas_w_min)
+        private int czas_w_min;
+        private Typ typRoweru;
+
+        public Platnosc(Typ typRoweru, int czas_w_min)
         {
-            this.stawka = stawka;
+            this.typRoweru = typRoweru;
             this.czas_w_min = czas_w_min;
         }
 
-        public void obliczKwote()
+
+        public double ObliczKwote()
         {
-            this.saldo -= stawka * czas_w_min;
+            if (typRoweru == Typ.standardowy)
+            {
+                return 1.2 * czas_w_min;
+            }
+            else if (typRoweru == Typ.elektryczny)
+            {
+                return 2.5 * czas_w_min;
+            }
+            else
+            {
+                throw new Exception("Nieznany typ roweru.");
+            }
         }
     }
 }
