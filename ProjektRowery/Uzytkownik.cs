@@ -8,19 +8,28 @@ namespace ProjektRowery
 {
     public class Uzytkownik
     {
+        private static int ostatnieId = 0;
         private int id;
-        private string imie;
-        private string nazwisko;
+        public string imie { get; private set; }
+        public string nazwisko { get; private set; }
         private List<Rower> historiaWypozyczen;
         private double saldo;
+        
 
-        public Uzytkownik(int id, string imie, string nazwisko)
+        public Uzytkownik(string imie, string nazwisko)
         {
-            this.id = id;
+            this.id = ostatnieId++;
             this.imie = imie;
             this.nazwisko = nazwisko;
             this.historiaWypozyczen = new List<Rower>();
             this.saldo = 0.0; // Inicjalizacja salda użytkownika
+            
+
+        }
+
+        public void UserInfo()
+        {
+            Console.WriteLine($"Imie: {this.imie} \nNazwisko: {this.nazwisko} \nSaldo: {this.saldo}");
         }
             
         public void WypozyczRower(StacjaRowerowa stacja, Rower rower) 
