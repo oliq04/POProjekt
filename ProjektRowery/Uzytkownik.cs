@@ -10,8 +10,8 @@ namespace ProjektRowery
     {
         private static int ostatnieId = 0;
         private int id;
-        private string imie;
-        private string nazwisko;
+        public string imie { get; private set; }
+        public string nazwisko { get; private set; }
         private List<Rower> historiaWypozyczen;
         private double saldo;
         
@@ -23,6 +23,7 @@ namespace ProjektRowery
             this.nazwisko = nazwisko;
             this.historiaWypozyczen = new List<Rower>();
             this.saldo = 0.0; // Inicjalizacja salda użytkownika
+            
 
         }
 
