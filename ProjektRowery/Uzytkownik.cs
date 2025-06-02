@@ -12,90 +12,57 @@ namespace ProjektRowery
         private int id;
         public string imie { get; private set; }
         public string nazwisko { get; private set; }
-        private List<Rower> historiaWypozyczen;
+        public List<Wypozyczenie> historiaWypozyczen { get; private set; } 
+
         private double saldo;
-        
 
         public Uzytkownik(string imie, string nazwisko)
         {
             this.id = ostatnieId++;
             this.imie = imie;
             this.nazwisko = nazwisko;
-            this.historiaWypozyczen = new List<Rower>();
-            this.saldo = 0.0; // Inicjalizacja salda użytkownika
-            
-
+            this.historiaWypozyczen = new List<Wypozyczenie>(); 
+            this.saldo = 0.0;
         }
 
-        public void UserInfo()
+        public void DodajWypozyczenie(Rower rower, StacjaRowerowa stacja)
         {
-            Console.WriteLine($"Imie: {this.imie} \nNazwisko: {this.nazwisko} \nSaldo: {this.saldo}");
+            historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
         }
-            
-        public void WypozyczRower(StacjaRowerowa stacja, Rower rower) 
+        public void WypozyczRower(StacjaRowerowa stacja, Rower rower)
         {
             if (rower.SprawdzStan() == "dostepny")
             {
                 rower.Wypozycz();
-
                 stacja.UsunZListyDostepnych(rower);
-
-                historiaWypozyczen.Add(rower);
-                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id} {rower.Marka()}");
+                historiaWypozyczen.Add(new Wypozyczenie(rower, stacja)); 
+                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id} {rower.Marka()} ze stacji {stacja.NazwaStacji}");
             }
             else
             {
-                Console.WriteLine("Nie można wypożyczyć roweru, ponieważ nie jest dostępny. Wybierz spośród dostępnych:");
-            }
-        }
-
-        public void ZwrocRower(StacjaRowerowa stacja,Rower rower)
-        {
-            rower.zwrocRower();
-            stacja.DodajDoListyDostepnych(rower);
-            Console.WriteLine($"{imie} zwrócił rower ID: {rower.id} {rower.Marka()}");
-        }
-
-        public void WyswietlHistorie()
-        {
-            Console.WriteLine($"Historia wypożyczeń użytkownika {imie} {nazwisko}");
-            foreach (var rower in historiaWypozyczen)
-            {
-                Console.WriteLine($"Rower ID: {rower.id}, Typ: {rower.typ}, Status: {rower.SprawdzStan()}");
-            }
-        }
-
-        public void DodajSaldo(double kwota)
-        {
-            if (kwota > 0)
-            {
-                saldo += kwota;
-                Console.WriteLine($"Dodano {kwota} do salda użytkownika {imie} {nazwisko}. Aktualne saldo: {saldo}");
-            }
-            else
-            {
-                Console.WriteLine("Kwota musi być większa od zera.");
+                Console.WriteLine("Rower nie jest dostępny.");
             }
         }
 
         public void WypiszSaldo()
         {
-            Console.WriteLine($"Aktualne saldo użytkownika {imie} {nazwisko}: {saldo}");
+            Console.WriteLine($"Saldo użytkownika {imie} {nazwisko}: {saldo} zł");
         }
-
-        public void OplacRower(double koszt) //ObliczKwote()
+        public void WyswietlHistorie()
         {
-            if (saldo >= koszt)
+            Console.WriteLine($"Historia wypożyczeń użytkownika {imie} {nazwisko}:");
+
+            if (historiaWypozyczen.Count == 0)
             {
-                saldo -= koszt;
-                Console.WriteLine($"Opłacono rower. Koszt: {koszt}. Pozostałe saldo: {saldo}");
+                Console.WriteLine("Brak wypożyczeń.");
+                return;
             }
-            else
+
+            foreach (var wypozyczenie in historiaWypozyczen)
             {
-                Console.WriteLine("Niewystarczające saldo do opłacenia roweru.");
+                string statusZwrotu = wypozyczenie.czasZwrotu == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.czasZwrotu}";
+                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.typ}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
             }
         }
-
-
     }
 }

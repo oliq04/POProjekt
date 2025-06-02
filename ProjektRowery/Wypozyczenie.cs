@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace ProjektRowery
 {
-    class Wypozyczenie
+    public class Wypozyczenie
     {
-        private DateTime czasWypozyczenia;
-        private DateTime? czasZwrotu;
-        private Rower rower;
+        public DateTime czasWypozyczenia { get; private set; } // Tylko odczyt
+        public DateTime? czasZwrotu { get; private set; } // Teraz dostępne do odczytu!
+        public Rower rower { get; private set; } // Publiczny dostęp do roweru
 
-        public Wypozyczenie(Rower rower)
+        public Wypozyczenie(Rower rower, StacjaRowerowa stacjaRowerowa)
         {
             this.rower = rower;
             this.czasWypozyczenia = DateTime.Now;
@@ -26,11 +26,11 @@ namespace ProjektRowery
             {
                 czasZwrotu = DateTime.Now;
                 rower.zwrocRower();
-                Console.WriteLine("Wypozyczenie zakończone");
+                Console.WriteLine($"Wypożyczenie zakończone. Rower ID: {rower.id} zwrócono o {czasZwrotu}");
             }
             else
             {
-                Console.WriteLine("Wypozyczenie już wcześniej zakończono");
+                Console.WriteLine("Wypożyczenie już wcześniej zakończono.");
             }
         }
 
@@ -42,7 +42,7 @@ namespace ProjektRowery
             }
             else
             {
-                Console.WriteLine("Rower nie został jeszcze zwrócony");
+                Console.WriteLine("Rower nie został jeszcze zwrócony.");
                 return TimeSpan.Zero;
             }
         }

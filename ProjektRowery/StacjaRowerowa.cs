@@ -25,62 +25,75 @@ namespace ProjektRowery
     public class StacjaRowerowa
     {
 
+        public static List<StacjaRowerowa> ListaStacji = new List<StacjaRowerowa>();
+
         public List<Rower> ListaRowerow { get; private set; }
-
         public int LiczbaMiejsc { get; private set; }
-
-        public List<(string NazwaStacji, string NazwaMiasta)> StacjeInfo { get; private set; }
-            = new List<(string NazwaStacji, string NazwaMiasta)>();
+        public string NazwaStacji { get; private set; }
+        public string NazwaMiasta { get; private set; }
 
         public int LiczbaWolnychMiejsc => LiczbaMiejsc - ListaRowerow.Count;
-
-        private string nazwaStacji;
-        private string nazwaMiasta;
 
         public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, string nazwaMiasta, List<Rower> poczatkoweRowery)
         {
             LiczbaMiejsc = liczbaMiejsc;
-            ListaRowerow = poczatkoweRowery;
-            StacjeInfo.Add((nazwaStacji, nazwaMiasta));
-            this.nazwaStacji=nazwaStacji;
-            this.nazwaMiasta= nazwaMiasta;
+            ListaRowerow = poczatkoweRowery ?? new List<Rower>(); 
+            NazwaStacji = nazwaStacji;
+            NazwaMiasta = nazwaMiasta;
+            ListaStacji.Add(this);
         }
 
         public void UsunZListyDostepnych(Rower rower)
         {
-            ListaRowerow.Remove(rower);
+            if (ListaRowerow.Contains(rower))
+            {
+                ListaRowerow.Remove(rower);
+                Console.WriteLine($"Rower ID: {rower.id} został wypożyczony ze stacji {NazwaStacji}.");
+            }
+            else
+            {
+                Console.WriteLine($"Rower ID: {rower.id} nie znajduje się na stacji {NazwaStacji}.");
+            }
         }
         public void DodajDoListyDostepnych(Rower rower)
         {
             if (LiczbaWolnychMiejsc > 0)
             {
                 ListaRowerow.Add(rower);
+                Console.WriteLine($"Rower ID: {rower.id} został zwrócony do stacji {NazwaStacji}.");
             }
             else
             {
                 throw new StacjaPrzepelnionaException("\nStacja jest przepełniona! Udaj się do innej, lub spróbuj ponownie za jakiś czas...");
             }
-            
         }
-    
+
 
         public bool CzyMoznaOddacRower()
         {
             return LiczbaWolnychMiejsc > 0;
         }
 
-        public  bool czyMoznaWypozyczycRower(Rower nazwa)
+        public  bool czyMoznaWypozyczycRower(Rower rower)
         {
-            return ListaRowerow.Contains(nazwa);
+            return ListaRowerow.Contains(rower);
         }
 
-        public void roweryNaStacji(StacjaRowerowa stacja)
+        public void WyswietlDostepneRowery()
         {
-            Console.WriteLine("\n");
-            Console.WriteLine($"Dostepne rowery na stacji {stacja.nazwaStacji} w mieście {stacja.nazwaMiasta}:");
-            foreach (var row in ListaRowerow)
+            Console.WriteLine($"\nDostępne rowery na stacji {NazwaStacji} ({NazwaMiasta}):");
+            foreach (var rower in ListaRowerow)
             {
-                Console.WriteLine(row.Marka());
+                Console.WriteLine($"ID: {rower.id}, Typ: {rower.typ}, Marka: {rower.Marka()}");
+            }
+        }
+
+        public static void WyswietlWszystkieStacje()
+        {
+            Console.WriteLine("\nLista wszystkich stacji:");
+            foreach (var stacja in ListaStacji)
+            {
+                Console.WriteLine($"{stacja.NazwaStacji}, {stacja.NazwaMiasta} – {stacja.LiczbaWolnychMiejsc} wolnych miejsc");
             }
         }
 
