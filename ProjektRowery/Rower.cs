@@ -62,6 +62,7 @@ namespace ProjektRowery
             if (this.status != StatusRoweru.dostepny)
             {
                 this.status = StatusRoweru.dostepny;
+                Console.WriteLine("Zwrocono rower");
 
                
             }
