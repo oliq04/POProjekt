@@ -16,6 +16,8 @@ namespace ProjektRowery
 
         private double saldo;
 
+       
+
         public Uzytkownik(string imie, string nazwisko)
         {
             this.id = ostatnieId++;
@@ -37,6 +39,7 @@ namespace ProjektRowery
                 stacja.UsunZListyDostepnych(rower);
                 historiaWypozyczen.Add(new Wypozyczenie(rower, stacja)); 
                 Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id} {rower.Marka()} ze stacji {stacja.NazwaStacji}");
+                
             }
             else
             {

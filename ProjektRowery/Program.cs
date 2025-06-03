@@ -99,9 +99,12 @@ namespace ProjektRowery
                                             Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
                                             if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
                                             {
-                                                wybranaStacja.UsunZListyDostepnych(wybranyRower);
-                                                zalogowanyUser.historiaWypozyczen.Add(new Wypozyczenie(wybranyRower, wybranaStacja));
-                                                Console.WriteLine($"Wypożyczyłeś rower ID: {idRoweru} ze stacji {wybranaStacja.NazwaStacji}.");
+                                                zalogowanyUser.WypozyczRower(wybranaStacja,wybranyRower);
+                                                //wybranaStacja.UsunZListyDostepnych(wybranyRower); //tutaj nie jest wogle zmieniany status
+                                                
+                                                
+
+                                                
                                             }
                                             else
                                             {
@@ -110,6 +113,8 @@ namespace ProjektRowery
                                         }
                                         break;
                                     case 4:
+                                        //Tu trzeba wyswietlic wypozyczone rowery przez uzytkownika, zeby latwiej bylo zwrocic
+                                        zalogowanyUser.WyswietlHistorie();
                                         Console.WriteLine("Podaj ID roweru do zwrotu:");
                                         int.TryParse(Console.ReadLine(), out int idZwrotu);
 
@@ -126,9 +131,10 @@ namespace ProjektRowery
                                                 StacjaRowerowa stacjaZwrotu = StacjaRowerowa.ListaStacji[numerStacjiZwrot - 1];
 
                                                 aktywneWypozyczenie.rower.zwrocRower();
+                                                aktywneWypozyczenie.ZakonczWypozyczenie();
                                                 stacjaZwrotu.DodajDoListyDostepnych(aktywneWypozyczenie.rower);
 
-                                                Console.WriteLine($"Rower ID: {idZwrotu} został zwrócony na stację {stacjaZwrotu.NazwaStacji}.");
+                                                
                                             }
                                         }
                                         break;

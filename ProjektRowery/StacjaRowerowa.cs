@@ -60,7 +60,7 @@ namespace ProjektRowery
             if (LiczbaWolnychMiejsc > 0)
             {
                 ListaRowerow.Add(rower);
-                Console.WriteLine($"Rower ID: {rower.id} został zwrócony do stacji {NazwaStacji}.");
+                
             }
             else
             {
