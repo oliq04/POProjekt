@@ -25,7 +25,6 @@ namespace ProjektRowery
     public class StacjaRowerowa
     {
 
-        public static List<StacjaRowerowa> ListaStacji = new List<StacjaRowerowa>();
 
         public List<Rower> ListaRowerow { get; private set; }
         public int LiczbaMiejsc { get; private set; }
@@ -40,7 +39,6 @@ namespace ProjektRowery
             ListaRowerow = poczatkoweRowery ?? new List<Rower>(); 
             NazwaStacji = nazwaStacji;
             NazwaMiasta = nazwaMiasta;
-            ListaStacji.Add(this);
         }
 
         public void UsunZListyDostepnych(Rower rower)
@@ -87,15 +85,5 @@ namespace ProjektRowery
                 Console.WriteLine($"ID: {rower.id}, Typ: {rower.typ}, Marka: {rower.Marka()}");
             }
         }
-
-        public static void WyswietlWszystkieStacje()
-        {
-            Console.WriteLine("\nLista wszystkich stacji:");
-            foreach (var stacja in ListaStacji)
-            {
-                Console.WriteLine($"{stacja.NazwaStacji}, {stacja.NazwaMiasta} – {stacja.LiczbaWolnychMiejsc} wolnych miejsc");
-            }
-        }
-
     }
 }

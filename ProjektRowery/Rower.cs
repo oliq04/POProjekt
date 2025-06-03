@@ -59,7 +59,7 @@ namespace ProjektRowery
 
         public void zwrocRower()
         {
-            if (this.status != StatusRoweru.dostepny)
+            if (this.status == StatusRoweru.wypozyczony)
             {
                 this.status = StatusRoweru.dostepny;
                 Console.WriteLine("Zwrocono rower");

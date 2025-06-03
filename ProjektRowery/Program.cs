@@ -1,176 +1,183 @@
-﻿using System.ComponentModel.Design;
-using System.Diagnostics;
+﻿using ProjektRowery;
 
-namespace ProjektRowery
+
+IDisplay display = new TerminalDisplay();
+
+List<Uzytkownik> listaUzytkownikow = [];
+List<StacjaRowerowa> ListaStacji = [
+    new(5, "Centrum", "Warszawa", [new(1, Typ.standardowy, "Trek"), new(2, Typ.elektryczny, "Giant") ]),
+            new(4, "Dworzec", "Warszawa", [new(3, Typ.standardowy, "Kross"), new(4, Typ.elektryczny, "Specialized") ])
+];
+
+void WyswietlWszystkieStacje()
 {
-    internal class Program
+    Console.WriteLine("\nLista wszystkich stacji:");
+    foreach (var stacja in ListaStacji)
     {
-        static List<Uzytkownik> listaUzytkownikow = new List<Uzytkownik>();
+        Console.WriteLine($"{stacja.NazwaStacji}, {stacja.NazwaMiasta} – {stacja.LiczbaWolnychMiejsc} wolnych miejsc");
+    }
+}
 
+Uzytkownik Tomasz = new Uzytkownik("Tomasz", "Problem");
+listaUzytkownikow.Add(Tomasz);
 
-        static void Main(string[] args)
-        {
-            Uzytkownik Tomasz = new Uzytkownik("Tomasz", "Problem");
-            listaUzytkownikow.Add(Tomasz);
+bool aplikacjaAktywna = true;
 
-            new StacjaRowerowa(5, "Centrum", "Warszawa", new List<Rower> { new Rower(1, Typ.standardowy, "Trek"), new Rower(2, Typ.elektryczny, "Giant") });
-            new StacjaRowerowa(4, "Dworzec", "Warszawa", new List<Rower> { new Rower(3, Typ.standardowy, "Kross"), new Rower(4, Typ.elektryczny, "Specialized") });
+while (aplikacjaAktywna)
+{
+    Console.WriteLine("\nWitaj w aplikacji wypożyczalni miejskiej rowerów!");
+    Console.WriteLine("Aby wypożyczyć rower, zaloguj się na swoje konto lub utwórz nowe!\n");
 
-            bool aplikacjaAktywna = true;
+    Console.WriteLine("1. Utwórz nowe konto");
+    Console.WriteLine("2. Zaloguj się");
+    Console.WriteLine("3. Wyświetl dostępne stacje rowerowe");
+    Console.WriteLine("4. Zakończ działanie programu");
 
-            while (aplikacjaAktywna)
+    int.TryParse(Console.ReadLine(), out int wybor);
+
+    switch (wybor)
+    {
+        case 1:
+            string imie = GetName("imię");
+            string nazwisko = GetName("nazwisko");
+
+            try
             {
-                Console.WriteLine("\nWitaj w aplikacji wypożyczalni miejskiej rowerów!");
-                Console.WriteLine("Aby wypożyczyć rower, zaloguj się na swoje konto lub utwórz nowe!\n");
+                listaUzytkownikow.Add(new(imie, nazwisko));
+                Console.WriteLine("Pomyślnie utworzono użytkownika.");
+            }
+            catch
+            {
+                Console.WriteLine("Błąd przy tworzeniu konta.");
+            }
+            break;
 
-                Console.WriteLine("1. Utwórz nowe konto");
-                Console.WriteLine("2. Zaloguj się");
-                Console.WriteLine("3. Wyświetl dostępne stacje rowerowe");
-                Console.WriteLine("4. Zakończ działanie programu");
+        case 2:
+            imie = GetName("imię");
+            nazwisko = GetName("nazwisko");
 
-                int.TryParse(Console.ReadLine(), out int wybor);
+            Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.imie == imie && user.nazwisko == nazwisko);
 
-                switch (wybor)
+            if (zalogowanyUser is not null)
+            {
+                Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.imie}!");
+
+                bool aktywneMenu = true;
+                while (aktywneMenu)
                 {
-                    case 1:
-                        Console.WriteLine("Podaj imię:");
-                        string imie = Console.ReadLine();
-                        Console.WriteLine("Podaj nazwisko:");
-                        string nazwisko = Console.ReadLine();
+                    Console.WriteLine("\nCo chcesz zrobić?");
+                    Console.WriteLine("1. Wyświetlić saldo");
+                    Console.WriteLine("2. Wyświetlić historię wypożyczeń");
+                    Console.WriteLine("3. Wypożyczyć rower");
+                    Console.WriteLine("4. Zwrócić rower");
+                    Console.WriteLine("5. Zgłosić usterkę roweru");
+                    Console.WriteLine("6. Wyloguj się");
 
-                        try
-                        {
-                            Uzytkownik user = new Uzytkownik(imie, nazwisko);
-                            listaUzytkownikow.Add(user);
-                            Console.WriteLine("Pomyślnie utworzono użytkownika.");
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Błąd przy tworzeniu konta.");
-                        }
-                        break;
+                    int.TryParse(Console.ReadLine(), out int wyborAkcji);
 
-                    case 2:
-                        Console.WriteLine("Podaj imię:");
-                        string imieLogin = Console.ReadLine();
-                        Console.WriteLine("Podaj nazwisko:");
-                        string nazwiskoLogin = Console.ReadLine();
+                    switch (wyborAkcji)
+                    {
+                        case 1:
+                            zalogowanyUser.WypiszSaldo();
+                            break;
+                        case 2:
+                            zalogowanyUser.WyswietlHistorie();
+                            break;
+                        case 3:
+                            WyswietlWszystkieStacje();
+                            Console.WriteLine("Wybierz numer stacji:");
+                            int.TryParse(Console.ReadLine(), out int numerStacji);
 
-                        Uzytkownik zalogowanyUser = listaUzytkownikow.Find(user => user.imie == imieLogin && user.nazwisko == nazwiskoLogin);
-
-                        if (zalogowanyUser != null)
-                        {
-                            Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.imie}!");
-
-                            bool aktywneMenu = true;
-                            while (aktywneMenu)
+                            if (numerStacji >= 1 && numerStacji <= ListaStacji.Count)
                             {
-                                Console.WriteLine("\nCo chcesz zrobić?");
-                                Console.WriteLine("1. Wyświetlić saldo");
-                                Console.WriteLine("2. Wyświetlić historię wypożyczeń");
-                                Console.WriteLine("3. Wypożyczyć rower");
-                                Console.WriteLine("4. Zwrócić rower");
-                                Console.WriteLine("5. Zgłosić usterkę roweru");
-                                Console.WriteLine("6. Wyloguj się");
+                                StacjaRowerowa wybranaStacja = ListaStacji[numerStacji - 1];
 
-                                int.TryParse(Console.ReadLine(), out int wyborAkcji);
+                                wybranaStacja.WyswietlDostepneRowery();
+                                Console.WriteLine("Podaj ID roweru, który chcesz wypożyczyć:");
+                                int.TryParse(Console.ReadLine(), out int idRoweru);
 
-                                switch (wyborAkcji)
+                                Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
+                                if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
                                 {
-                                    case 1:
-                                        zalogowanyUser.WypiszSaldo();
-                                        break;
-                                    case 2:
-                                        zalogowanyUser.WyswietlHistorie();
-                                        break;
-                                    case 3:
-                                        StacjaRowerowa.WyswietlWszystkieStacje();
-                                        Console.WriteLine("Wybierz numer stacji:");
-                                        int.TryParse(Console.ReadLine(), out int numerStacji);
+                                    zalogowanyUser.WypozyczRower(wybranaStacja, wybranyRower);
+                                    //wybranaStacja.UsunZListyDostepnych(wybranyRower); //tutaj nie jest wogle zmieniany status
 
-                                        if (numerStacji >= 1 && numerStacji <= StacjaRowerowa.ListaStacji.Count)
-                                        {
-                                            StacjaRowerowa wybranaStacja = StacjaRowerowa.ListaStacji[numerStacji - 1];
 
-                                            wybranaStacja.WyswietlDostepneRowery();
-                                            Console.WriteLine("Podaj ID roweru, który chcesz wypożyczyć:");
-                                            int.TryParse(Console.ReadLine(), out int idRoweru);
 
-                                            Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
-                                            if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
-                                            {
-                                                zalogowanyUser.WypozyczRower(wybranaStacja,wybranyRower);
-                                                //wybranaStacja.UsunZListyDostepnych(wybranyRower); //tutaj nie jest wogle zmieniany status
-                                                
-                                                
 
-                                                
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("Rower nie jest dostępny.");
-                                            }
-                                        }
-                                        break;
-                                    case 4:
-                                        //Tu trzeba wyswietlic wypozyczone rowery przez uzytkownika, zeby latwiej bylo zwrocic
-                                        zalogowanyUser.WyswietlHistorie();
-                                        Console.WriteLine("Podaj ID roweru do zwrotu:");
-                                        int.TryParse(Console.ReadLine(), out int idZwrotu);
-
-                                        Wypozyczenie aktywneWypozyczenie = zalogowanyUser.historiaWypozyczen.Find(wypozyczenie => wypozyczenie.rower.id == idZwrotu && wypozyczenie.czasZwrotu == null);
-
-                                        if (aktywneWypozyczenie != null)
-                                        {
-                                            StacjaRowerowa.WyswietlWszystkieStacje();
-                                            Console.WriteLine("Wybierz numer stacji do zwrotu:");
-                                            int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
-
-                                            if (numerStacjiZwrot >= 1 && numerStacjiZwrot <= StacjaRowerowa.ListaStacji.Count)
-                                            {
-                                                StacjaRowerowa stacjaZwrotu = StacjaRowerowa.ListaStacji[numerStacjiZwrot - 1];
-
-                                                aktywneWypozyczenie.rower.zwrocRower();
-                                                aktywneWypozyczenie.ZakonczWypozyczenie();
-                                                stacjaZwrotu.DodajDoListyDostepnych(aktywneWypozyczenie.rower);
-
-                                                
-                                            }
-                                        }
-                                        break;
-                                    case 5:
-                                        Console.WriteLine("Tutaj dodamy funkcję.");
-                                        break;
-                                    case 6:
-                                        aktywneMenu = false;
-                                        Console.WriteLine("Wylogowano.");
-                                        break;
-                                    default:
-                                        Console.WriteLine("Niepoprawna opcja.");
-                                        break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Rower nie jest dostępny.");
                                 }
                             }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Nie znaleziono użytkownika. Sprawdź poprawność danych.");
-                        }
-                        break;
+                            break;
+                        case 4:
+                            //Tu trzeba wyswietlic wypozyczone rowery przez uzytkownika, zeby latwiej bylo zwrocic
+                            zalogowanyUser.WyswietlHistorie();
+                            Console.WriteLine("Podaj ID roweru do zwrotu:");
+                            int.TryParse(Console.ReadLine(), out int idZwrotu);
 
-                    case 3:
-                        StacjaRowerowa.WyswietlWszystkieStacje();
-                        break;
+                            Wypozyczenie aktywneWypozyczenie = zalogowanyUser.historiaWypozyczen.Find(wypozyczenie => wypozyczenie.rower.id == idZwrotu && wypozyczenie.czasZwrotu == null);
 
-                    case 4:
-                        aplikacjaAktywna = false;
-                        Console.WriteLine("Zakończono działanie programu.");
-                        break;
+                            if (aktywneWypozyczenie != null)
+                            {
+                                WyswietlWszystkieStacje();
+                                Console.WriteLine("Wybierz numer stacji do zwrotu:");
+                                int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
 
-                    default:
-                        Console.WriteLine("Niepoprawna opcja.");
-                        break;
+                                if (numerStacjiZwrot >= 1 && numerStacjiZwrot <= ListaStacji.Count)
+                                {
+                                    StacjaRowerowa stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
+
+                                    aktywneWypozyczenie.rower.zwrocRower();
+                                    aktywneWypozyczenie.ZakonczWypozyczenie();
+                                    stacjaZwrotu.DodajDoListyDostepnych(aktywneWypozyczenie.rower);
+
+
+                                }
+                            }
+                            break;
+                        case 5:
+                            Console.WriteLine("Tutaj dodamy funkcję.");
+                            break;
+                        case 6:
+                            aktywneMenu = false;
+                            Console.WriteLine("Wylogowano.");
+                            break;
+                        default:
+                            Console.WriteLine("Niepoprawna opcja.");
+                            break;
+                    }
                 }
             }
-        }
+            else
+            {
+                Console.WriteLine("Nie znaleziono użytkownika. Sprawdź poprawność danych.");
+            }
+            break;
+
+        case 3:
+            WyswietlWszystkieStacje();
+            break;
+
+        case 4:
+            aplikacjaAktywna = false;
+            Console.WriteLine("Zakończono działanie programu.");
+            break;
+
+        default:
+            Console.WriteLine("Niepoprawna opcja.");
+            break;
     }
+}
+static string GetName(string displayName)
+{
+    string value = "A";
+    do
+        Console.WriteLine(string.IsNullOrWhiteSpace(value)
+            ? $"Podaj prawidlowe {displayName}:"
+            : $"Podaj {displayName}:");
+    while (string.IsNullOrWhiteSpace(value = Console.ReadLine() ?? string.Empty));
+    return value;
 }
