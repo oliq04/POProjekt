@@ -20,11 +20,11 @@ namespace ProjektRowery
 
             if (typRoweru == Typ.standardowy)
             {
-                return 0.5 * czas_w_min;
+                return 0.5 * czas_w_min + 10;
             }
             else if (typRoweru == Typ.elektryczny)
             {
-                return 0.8 * czas_w_min;
+                return 1 * czas_w_min + 20;
             }
             else
             {

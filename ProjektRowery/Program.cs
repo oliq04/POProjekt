@@ -64,7 +64,8 @@ while (aplikacjaAktywna)
                     Console.WriteLine("3. Wyświetlić historię wypożyczeń");
                     Console.WriteLine("4. Wypożyczyć rower");
                     Console.WriteLine("5. Zwrócić rower");
-                    Console.WriteLine("6. Wyloguj się");
+                    Console.WriteLine("6. Cennik");
+                    Console.WriteLine("7. Wyloguj się");
 
                     int.TryParse(Console.ReadLine(), out int wyborAkcji);
 
@@ -186,8 +187,13 @@ while (aplikacjaAktywna)
                                 Console.WriteLine("Nie znaleziono aktywnego wypożyczenia o podanym ID.");
                             }
                             break;
-
                         case 6:
+                            Console.WriteLine("Cennik:");
+                            Console.WriteLine("Standardowy rower pierwsze 30 min za 10 zł \n każda kolejna minuta za 0.50zł");
+                            Console.WriteLine("Elektryczny rower pierwsze 30 min za 20 zł \n każda kolejna minuta za 1zł);)");
+                            Console.WriteLine("Minimalne saldo do wypożyczenia: 60 zł");
+                            break;
+                        case 7:
                             aktywneMenu = false;
                             Console.WriteLine("Wylogowano.");
                             break;
