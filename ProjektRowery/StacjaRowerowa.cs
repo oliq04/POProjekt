@@ -82,7 +82,7 @@ namespace ProjektRowery
             Console.WriteLine($"\nDostępne rowery na stacji {NazwaStacji} ({NazwaMiasta}):");
             foreach (var rower in ListaRowerow)
             {
-                Console.WriteLine($"ID: {rower.id}, Typ: {rower.typ}, Marka: {rower.Marka()}");
+                Console.WriteLine($"ID: {rower.id}, Typ: {rower.type}, Marka: {rower.Marka()}");
             }
         }
     }

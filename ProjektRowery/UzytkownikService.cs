@@ -14,45 +14,24 @@ namespace ProjektRowery
 
         }
 
-         public void DodajWypozyczenie(Rower rower, StacjaRowerowa stacja)
+        public void WypiszSaldo(Uzytkownik user)
         {
-            historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
+            Console.WriteLine($"Saldo użytkownika {user.imie} {user.nazwisko}: {user.ZwrocSaldo()} zł");
         }
-        public void WypozyczRower(StacjaRowerowa stacja, Rower rower, RowerService serwis)
+        public void WyswietlHistorie(Uzytkownik user)
         {
-            if (rower.Status() == StatusRoweru.dostepny)
-            {
-                serwis.Wypozycz(rower, stacja);
+            Console.WriteLine($"Historia wypożyczeń użytkownika {user.imie} {user.nazwisko}:");
 
-                
-                
-                //Console.WriteLine($"{zalogowanyUser.imie} wypożyczył rower ID: {rower.id} {rower.Marka()} ze stacji {stacja.NazwaStacji}");
-                
-            }
-            else
-            {
-                Console.WriteLine("Rower nie jest dostępny.");
-            }
-        }
-
-        public void WypiszSaldo()
-        {
-            Console.WriteLine($"Saldo użytkownika {imie} {nazwisko}: {saldo} zł");
-        }
-        public void WyswietlHistorie()
-        {
-            Console.WriteLine($"Historia wypożyczeń użytkownika {imie} {nazwisko}:");
-
-            if (historiaWypozyczen.Count == 0)
+            if (user.ShowHistory().Count == 0)
             {
                 Console.WriteLine("Brak wypożyczeń.");
                 return;
             }
 
-            foreach (var wypozyczenie in historiaWypozyczen)
+            foreach (var wypozyczenie in user.ShowHistory())
             {
                 string statusZwrotu = wypozyczenie.czasZwrotu == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.czasZwrotu}";
-                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.typ}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
+                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.type}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
             }
         }
 

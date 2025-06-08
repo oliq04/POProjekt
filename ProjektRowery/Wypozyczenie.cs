@@ -25,13 +25,10 @@ namespace ProjektRowery
             if (czasZwrotu == null)
             {
                 czasZwrotu = DateTime.Now;
-                rower.zwrocRower();
+                
                 Console.WriteLine($"Wypożyczenie zakończone. Rower ID: {rower.id} zwrócono o {czasZwrotu}");
             }
-            else
-            {
-                Console.WriteLine("Wypożyczenie już wcześniej zakończono.");
-            }
+          
         }
 
         public TimeSpan ObliczCzas()

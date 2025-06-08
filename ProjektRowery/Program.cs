@@ -55,7 +55,8 @@ while (aplikacjaAktywna)
         case 2:
             imie = GetName("imię");
             nazwisko = GetName("nazwisko");
-
+            RowerService rowerService = new RowerService();
+            UzytkownikService userService = new UzytkownikService();
             Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.imie == imie && user.nazwisko == nazwisko);
 
             if (zalogowanyUser is not null)
@@ -78,10 +79,10 @@ while (aplikacjaAktywna)
                     switch (wyborAkcji)
                     {
                         case 1:
-                            zalogowanyUser.WypiszSaldo();
+                            userService.WypiszSaldo(zalogowanyUser);
                             break;
                         case 2:
-                            zalogowanyUser.WyswietlHistorie();
+                            userService.WyswietlHistorie(zalogowanyUser);
                             break;
                         case 3:
                             WyswietlWszystkieStacje();
@@ -99,7 +100,7 @@ while (aplikacjaAktywna)
                                 Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
                                 if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
                                 {
-                                    zalogowanyUser.WypozyczRower(wybranaStacja, wybranyRower);
+                                    rowerService.Wypozycz(wybranyRower, wybranaStacja, zalogowanyUser);
                                     //wybranaStacja.UsunZListyDostepnych(wybranyRower); //tutaj nie jest wogle zmieniany status
 
 
@@ -112,16 +113,18 @@ while (aplikacjaAktywna)
                                 }
                             }
                             break;
+
                         case 4:
-                            //Tu trzeba wyswietlic wypozyczone rowery przez uzytkownika, zeby latwiej bylo zwrocic
-                            zalogowanyUser.WyswietlHistorie();
+                            
+                            userService.WyswietlHistorie(zalogowanyUser);
                             Console.WriteLine("Podaj ID roweru do zwrotu:");
                             int.TryParse(Console.ReadLine(), out int idZwrotu);
 
-                            Wypozyczenie aktywneWypozyczenie = zalogowanyUser.historiaWypozyczen.Find(wypozyczenie => wypozyczenie.rower.id == idZwrotu && wypozyczenie.czasZwrotu == null);
+                            Wypozyczenie aktywneWypozyczenie = zalogowanyUser.ShowHistory().Find(w => w.rower.id == idZwrotu);
 
                             if (aktywneWypozyczenie != null)
                             {
+                                Rower rower = aktywneWypozyczenie.rower;
                                 WyswietlWszystkieStacje();
                                 Console.WriteLine("Wybierz numer stacji do zwrotu:");
                                 int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
@@ -130,11 +133,9 @@ while (aplikacjaAktywna)
                                 {
                                     StacjaRowerowa stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
 
-                                    aktywneWypozyczenie.rower.zwrocRower();
-                                    aktywneWypozyczenie.ZakonczWypozyczenie();
-                                    stacjaZwrotu.DodajDoListyDostepnych(aktywneWypozyczenie.rower);
+                                    rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
 
-
+                                   
                                 }
                             }
                             break;
