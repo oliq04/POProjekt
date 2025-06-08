@@ -14,13 +14,15 @@ namespace ProjektRowery
         }
 
 
-        public double ObliczKwote(string bike, int czas_w_min)
+        public double ObliczKwote(Rower rower, int czas_w_min)
         {
-            if (bike=="standardowy")
+            Typ typRoweru = rower.GetTyp();
+
+            if (typRoweru == Typ.standardowy)
             {
                 return 0.5 * czas_w_min;
             }
-            else if (bike == "elektryczny")
+            else if (typRoweru == Typ.elektryczny)
             {
                 return 0.8 * czas_w_min;
             }

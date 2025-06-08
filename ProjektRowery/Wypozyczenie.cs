@@ -9,9 +9,9 @@ namespace ProjektRowery
 {
     public class Wypozyczenie
     {
-        public DateTime czasWypozyczenia { get; private set; } // Tylko odczyt
-        public DateTime? czasZwrotu { get; private set; } // Teraz dostępne do odczytu!
-        public Rower rower { get; private set; } // Publiczny dostęp do roweru
+        private DateTime czasWypozyczenia;
+        private DateTime? czasZwrotu;
+        private Rower rower;
 
         public Wypozyczenie(Rower rower, StacjaRowerowa stacjaRowerowa)
         {
@@ -19,30 +19,31 @@ namespace ProjektRowery
             this.czasWypozyczenia = DateTime.Now;
             this.czasZwrotu = null;
         }
-
+        public DateTime GetCzasWypozyczenia() => czasWypozyczenia;
+        public DateTime? GetCzasZwrotu() => czasZwrotu;
+        public Rower GetRower() => rower;
         public void ZakonczWypozyczenie()
         {
             if (czasZwrotu == null)
             {
                 czasZwrotu = DateTime.Now;
-                
-                Console.WriteLine($"Wypożyczenie zakończone. Rower ID: {rower.id} zwrócono o {czasZwrotu}");
+                Console.WriteLine($"\nWypożyczenie zakończone. Rower ID: {rower.GetId()} zwrócono o {czasZwrotu}");
             }
-          
+            else
+            {
+                Console.WriteLine("\nWypożyczenie tego roweru już zostało zakończone.");
+            }
         }
 
         public int ObliczCzas()
         {
-            if (czasZwrotu != null)
+            if (czasZwrotu == null)
             {
-                var span = (DateTime)czasZwrotu - czasWypozyczenia;
-                return (int)span.TotalMinutes;
+                throw new InvalidOperationException("\nRower nie został jeszcze zwrócony.");
             }
-            else
-            {
-                Console.WriteLine("Rower nie został jeszcze zwrócony.");
-                return 0;
-            }
+
+            var czasTrwania = (DateTime)czasZwrotu - czasWypozyczenia;
+            return (int)czasTrwania.TotalMinutes;
         }
     }
 }

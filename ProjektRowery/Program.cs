@@ -49,7 +49,7 @@ while (aplikacjaAktywna)
             nazwisko = GetName("nazwisko");
             RowerService rowerService = new RowerService();
             UzytkownikService userService = new UzytkownikService();
-            Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.GetImie() == imie && user.GetImie() == nazwisko);
+            Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.GetImie() == imie && user.GetNazwisko() == nazwisko);
 
             if (zalogowanyUser is not null)
             {
@@ -115,8 +115,8 @@ while (aplikacjaAktywna)
                                 Console.WriteLine("Podaj ID roweru, który chcesz wypożyczyć:");
                                 int.TryParse(Console.ReadLine(), out int idRoweru);
 
-                                Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
-                                if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower) )
+                                Rower wybranyRower = wybranaStacja.GetListaRowerow().FirstOrDefault(rower => rower.GetId() == idRoweru);
+                                if (wybranyRower != null && wybranaStacja.CzyMoznaWypozyczycRower(wybranyRower) )
                                 {
                                     rowerService.Wypozycz(wybranyRower, wybranaStacja, zalogowanyUser, userService);
                                 }
@@ -131,11 +131,11 @@ while (aplikacjaAktywna)
                             userService.WyswietlHistorie(zalogowanyUser);
                             Console.WriteLine("Podaj ID roweru do zwrotu:");
                             int.TryParse(Console.ReadLine(), out int idZwrotu);
-                            Wypozyczenie aktywneWypozyczenie =zalogowanyUser.ShowHistory().Find(w => w.rower.id == idZwrotu);
+                            Wypozyczenie aktywneWypozyczenie =zalogowanyUser.GetHistoriaWypozyczen().Find(w => w.GetRower().GetId() == idZwrotu);
 
                             if (aktywneWypozyczenie != null)
                             {
-                                Rower rower = aktywneWypozyczenie.rower;
+                                Rower rower = aktywneWypozyczenie.GetRower();
                                 StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
                                 Console.WriteLine("Wybierz numer stacji do zwrotu:");
                                 int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
@@ -174,9 +174,9 @@ while (aplikacjaAktywna)
 
                                     var platnoscService = new Platnosc();
 
-                                    string typRoweru = rowerService.ZwrocTypEnum(aktywneWypozyczenie.rower).ToString();
+                                    string typRoweru = aktywneWypozyczenie.GetRower().GetTyp().ToString();
 
-                                    double zaplata = platnoscService.ObliczKwote(typRoweru, czasWMinutach);
+                                    double zaplata = platnoscService.ObliczKwote(aktywneWypozyczenie.GetRower(), czasWMinutach);
                                     Console.WriteLine($"Do zapłaty: {zaplata} zł");
                                     userService.Oplac(zalogowanyUser, zaplata);
                                 }

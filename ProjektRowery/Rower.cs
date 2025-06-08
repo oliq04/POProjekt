@@ -13,7 +13,7 @@ namespace ProjektRowery
 
     public class Rower
     {
-        public int id;
+        private int id;
         private Typ typ;
         private StatusRoweru status;
         private string marka;
@@ -25,13 +25,15 @@ namespace ProjektRowery
             this.status = StatusRoweru.dostepny;
             this.marka = marka;
         }
+        public int GetId() => id;
+        public Typ GetTyp() => typ;
+        public string GetMarka() => marka;
+        public StatusRoweru GetStatus() => status;
+        internal void ZmienStatus(StatusRoweru nowyStatus)
+        {
+            status = nowyStatus;
+        }
 
-        public string Marka() => marka;
-        public StatusRoweru Status() => status;
-
-        public void UstawStatus(StatusRoweru nowyStatus) => status = nowyStatus;
-
-        public Typ type() => typ;
 
     }
 }

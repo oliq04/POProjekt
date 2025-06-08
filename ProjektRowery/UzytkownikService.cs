@@ -8,12 +8,10 @@ namespace ProjektRowery
 {
     class UzytkownikService
     {
-
         public UzytkownikService()
-        {
-
+        { 
+        
         }
-
         public double ZwrocSaldo(Uzytkownik user)
         {
             return user.GetSaldo();
@@ -29,18 +27,32 @@ namespace ProjektRowery
             if (kwota <= 0)
                 throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
 
-            user.setSaldo(user.GetSaldo() + kwota);
+            user.ZmienSaldo(user.GetSaldo() + kwota);
             Console.WriteLine($"Dodano {kwota} zł. Nowe saldo: {user.GetSaldo()} zł");
         }
 
         public void Oplac(Uzytkownik user, double kwota)
         {
-            if (kwota <= 0)
+            if (kwota <= -1)
                 throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
 
-            user.setSaldo(user.GetSaldo() - kwota);
+            user.ZmienSaldo(user.GetSaldo() - kwota);
             Console.WriteLine($"Zmniejszono saldo o {kwota} zł. Nowe saldo: {user.GetSaldo()} zł");
         }
+        
+
+        public void DodajWypozyczenie(Uzytkownik user, Rower rower, StacjaRowerowa stacja)
+        {
+            if (user == null || rower == null || stacja == null)
+            {
+                Console.WriteLine("Błąd: Nieprawidłowe dane wypożyczenia.");
+                return;
+            }
+
+            user.GetHistoriaWypozyczen().Add(new Wypozyczenie(rower, stacja));
+            Console.WriteLine($"Dodano wypożyczenie roweru ID {rower.GetId()} dla użytkownika {user.GetImie()} {user.GetNazwisko()} ze stacji {stacja.GetId()} | ID stacji: {stacja.GetId()}.");
+        }
+
         public void WyswietlHistorie(Uzytkownik user)
         {
             Console.WriteLine($"Historia wypożyczeń użytkownika {user.GetImie()} {user.GetNazwisko()}:");
@@ -53,21 +65,9 @@ namespace ProjektRowery
 
             foreach (var wypozyczenie in user.GetHistoriaWypozyczen())
             {
-                string statusZwrotu = wypozyczenie.czasZwrotu == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.czasZwrotu}";
-                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.type()}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
+                string statusZwrotu = wypozyczenie.GetCzasZwrotu() == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.GetCzasZwrotu()}";
+                Console.WriteLine($"Rower ID: {wypozyczenie.GetRower().GetId()}, Typ: {wypozyczenie.GetRower().GetTyp()}, Wypożyczono: {wypozyczenie.GetCzasWypozyczenia()}, {statusZwrotu}");
             }
-        }
-
-        public void DodajWypozyczenie(Uzytkownik user, Rower rower, StacjaRowerowa stacja)
-        {
-            if (user == null || rower == null || stacja == null)
-            {
-                Console.WriteLine("Błąd: Nieprawidłowe dane wypożyczenia.");
-                return;
-            }
-
-            user.DodajWypozyczenie(rower, stacja);
-            Console.WriteLine($"Dodano wypożyczenie roweru ID {rower.id} dla użytkownika {user.GetImie()} {user.GetNazwisko()} ze stacji {stacja.NazwaStacji} | ID stacji: {stacja.id}.");
         }
     }
 }

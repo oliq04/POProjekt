@@ -14,19 +14,12 @@ namespace ProjektRowery
         {
 
         }
-
-
-        public string Marka(Rower rower)
-        {
-            return rower.Marka();
-        }
-
         public void Wypozycz(Rower rower, StacjaRowerowa stacja, Uzytkownik user, UzytkownikService userService)
         {
-            if (rower.Status() == StatusRoweru.dostepny)
+            if (rower.GetStatus() == StatusRoweru.dostepny)
             {
                 userService.DodajWypozyczenie(user, rower, stacja);
-                rower.UstawStatus(StatusRoweru.wypozyczony);
+                rower.ZmienStatus(StatusRoweru.wypozyczony);
                 stacja.UsunZListyDostepnych(rower);
                 
                 Console.WriteLine("\nPomyślnie wypożyczono rower!");
@@ -40,22 +33,22 @@ namespace ProjektRowery
 
         public string SprawdzStan(Rower rower)
         {
-            return rower.Status().ToString();
+            return rower.GetStatus().ToString();
         }
 
         public void ZglosUsterke(Rower rower)
         {
-            rower.UstawStatus(StatusRoweru.serwisowany);
+            rower.ZmienStatus(StatusRoweru.serwisowany);
         }
 
         public void zwrocRower(Rower rower, StacjaRowerowa stacja, Uzytkownik user)
         {
-            if (rower.Status() == StatusRoweru.wypozyczony)
+            if (rower.GetStatus() == StatusRoweru.wypozyczony)
             {
-                rower.UstawStatus(StatusRoweru.dostepny);
+                rower.ZmienStatus(StatusRoweru.dostepny);
                 stacja.DodajDoListyDostepnych(rower);
 
-                var ostatnieWypozyczenie = user.GetHistoriaWypozyczen().LastOrDefault(wypozyczenie => wypozyczenie.rower == rower && wypozyczenie.czasZwrotu == null);
+                var ostatnieWypozyczenie = user.GetHistoriaWypozyczen().LastOrDefault(wypozyczenie => wypozyczenie.GetRower() == rower && wypozyczenie.GetCzasZwrotu() == null);
                 if (ostatnieWypozyczenie != null)
                 {
                     ostatnieWypozyczenie.ZakonczWypozyczenie();
@@ -69,9 +62,6 @@ namespace ProjektRowery
 
             }
         }
-        public Typ ZwrocTypEnum(Rower rower)
-        {
-            return rower.type();
-        }
+
     }
 }
