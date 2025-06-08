@@ -12,8 +12,7 @@ namespace ProjektRowery
         private int id;
         public string imie { get; private set; }
         public string nazwisko { get; private set; }
-        public List<Wypozyczenie> historiaWypozyczen { get; private set; } 
-
+        private List<Wypozyczenie> historiaWypozyczen;
         private double saldo;
 
        
@@ -28,7 +27,9 @@ namespace ProjektRowery
         }
 
         public List<Wypozyczenie> ShowHistory() => this.historiaWypozyczen;
-        public List<Wypozyczenie> DodajWypozyczenie(Rower rower, StacjaRowerowa stacja) => this.historiaWypozyczen.Add(new Wypozyczenie(rower, stacja );
+        public void DodajWypozyczenie(Rower rower, StacjaRowerowa stacja) => this.historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
+
+        public double ZwrocSaldo() => this.saldo;
 
        
     }

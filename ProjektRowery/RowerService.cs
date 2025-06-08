@@ -21,14 +21,14 @@ namespace ProjektRowery
             return rower.Marka();
         }
 
-        public void Wypozycz(Rower rower, StacjaRowerowa stacja)
+        public void Wypozycz(Rower rower, StacjaRowerowa stacja, Uzytkownik user)
         {
             if (rower.Status() == StatusRoweru.dostepny)
             {
 
                 rower.UstawStatus(StatusRoweru.wypozyczony);
                 stacja.UsunZListyDostepnych(rower);
-                historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
+                user.DodajWypozyczenie(rower, stacja);
                 Console.WriteLine("\nPomyślnie wypożyczono rower!");
 
             }
@@ -48,11 +48,12 @@ namespace ProjektRowery
             rower.UstawStatus(StatusRoweru.serwisowany);
         }
 
-        public void zwrocRower(Rower rower)
+        public void zwrocRower(Rower rower, StacjaRowerowa stacja, Uzytkownik user)
         {
             if (rower.Status() == StatusRoweru.wypozyczony)
             {
                 rower.UstawStatus(StatusRoweru.dostepny);
+                stacja.DodajDoListyDostepnych(rower);
                 Console.WriteLine("Zwrocono rower");
 
             }
