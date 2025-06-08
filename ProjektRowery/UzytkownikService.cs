@@ -22,11 +22,11 @@ namespace ProjektRowery
         {
             if (rower.Status() == StatusRoweru.dostepny)
             {
-                serwis.Wypozycz(rower);
+                serwis.Wypozycz(rower, stacja);
 
-                stacja.UsunZListyDostepnych(rower);
-                historiaWypozyczen.Add(new Wypozyczenie(rower, stacja)); 
-                Console.WriteLine($"{imie} wypożyczył rower ID: {rower.id} {rower.Marka()} ze stacji {stacja.NazwaStacji}");
+                
+                
+                //Console.WriteLine($"{zalogowanyUser.imie} wypożyczył rower ID: {rower.id} {rower.Marka()} ze stacji {stacja.NazwaStacji}");
                 
             }
             else

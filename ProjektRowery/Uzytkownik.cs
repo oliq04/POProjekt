@@ -28,6 +28,7 @@ namespace ProjektRowery
         }
 
         public List<Wypozyczenie> ShowHistory() => this.historiaWypozyczen;
+        public List<Wypozyczenie> DodajWypozyczenie(Rower rower, StacjaRowerowa stacja) => this.historiaWypozyczen.Add(new Wypozyczenie(rower, stacja );
 
        
     }

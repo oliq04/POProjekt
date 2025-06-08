@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,14 @@ namespace ProjektRowery
             return rower.Marka();
         }
 
-        public void Wypozycz(Rower rower)
+        public void Wypozycz(Rower rower, StacjaRowerowa stacja)
         {
             if (rower.Status() == StatusRoweru.dostepny)
             {
 
                 rower.UstawStatus(StatusRoweru.wypozyczony);
+                stacja.UsunZListyDostepnych(rower);
+                historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
                 Console.WriteLine("\nPomyślnie wypożyczono rower!");
 
             }
