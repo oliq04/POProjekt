@@ -21,14 +21,14 @@ namespace ProjektRowery
             return rower.Marka();
         }
 
-        public void Wypozycz(Rower rower, StacjaRowerowa stacja, Uzytkownik user)
+        public void Wypozycz(Rower rower, StacjaRowerowa stacja, Uzytkownik user, UzytkownikService userService)
         {
             if (rower.Status() == StatusRoweru.dostepny)
             {
-
+                userService.DodajWypozyczenie(user, rower, stacja);
                 rower.UstawStatus(StatusRoweru.wypozyczony);
                 stacja.UsunZListyDostepnych(rower);
-                user.DodajWypozyczenie(rower, stacja);
+                
                 Console.WriteLine("\nPomyślnie wypożyczono rower!");
 
             }
@@ -40,7 +40,7 @@ namespace ProjektRowery
 
         public string SprawdzStan(Rower rower)
         {
-            return $"{rower.Status}";
+            return rower.Status().ToString();
         }
 
         public void ZglosUsterke(Rower rower)
@@ -54,7 +54,13 @@ namespace ProjektRowery
             {
                 rower.UstawStatus(StatusRoweru.dostepny);
                 stacja.DodajDoListyDostepnych(rower);
-                Console.WriteLine("Zwrocono rower");
+
+                var ostatnieWypozyczenie = user.historiaWypozyczen.LastOrDefault(wypozyczenie => wypozyczenie.rower == rower && wypozyczenie.czasZwrotu == null);
+                if (ostatnieWypozyczenie != null)
+                {
+                    ostatnieWypozyczenie.ZakonczWypozyczenie();
+                }
+                Console.WriteLine("\nRower pomyślnie zwrócono do stacji");
 
             }
             else

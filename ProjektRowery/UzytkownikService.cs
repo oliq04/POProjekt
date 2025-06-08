@@ -14,9 +14,14 @@ namespace ProjektRowery
 
         }
 
+        public double ZwrocSaldo(Uzytkownik user)
+        {
+            return user.saldo;
+        }
+
         public void WypiszSaldo(Uzytkownik user)
         {
-            Console.WriteLine($"Saldo użytkownika {user.imie} {user.nazwisko}: {user.ZwrocSaldo()} zł");
+            Console.WriteLine($"Saldo użytkownika {user.imie} {user.nazwisko}: {user.saldo} zł");
         }
         public void WyswietlHistorie(Uzytkownik user)
         {
@@ -35,7 +40,18 @@ namespace ProjektRowery
             }
         }
 
+        public void DodajWypozyczenie(Uzytkownik user, Rower rower, StacjaRowerowa stacja)
+        {
+            if (user == null || rower == null || stacja == null)
+            {
+                Console.WriteLine("Błąd: Nieprawidłowe dane wypożyczenia.");
+                return;
+            }
 
+            Wypozyczenie noweWypozyczenie = new Wypozyczenie(rower, stacja);
+            user.historiaWypozyczen.Add(noweWypozyczenie);
 
+            Console.WriteLine($"✔️ Dodano wypożyczenie roweru ID {rower.id} dla użytkownika {user.imie} {user.nazwisko} ze stacji {stacja.NazwaStacji} | ID stacji: {stacja.id}.");
+        }
     }
 }

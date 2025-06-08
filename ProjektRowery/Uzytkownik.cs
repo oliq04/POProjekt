@@ -12,10 +12,11 @@ namespace ProjektRowery
         private int id;
         public string imie { get; private set; }
         public string nazwisko { get; private set; }
-        private List<Wypozyczenie> historiaWypozyczen;
-        private double saldo;
+        public List<Wypozyczenie> historiaWypozyczen { get; private set; }
 
-       
+        public double saldo { get; set; }
+
+
 
         public Uzytkownik(string imie, string nazwisko)
         {
@@ -26,11 +27,14 @@ namespace ProjektRowery
             this.saldo = 0.0;
         }
 
+
+
         public List<Wypozyczenie> ShowHistory() => this.historiaWypozyczen;
-        public void DodajWypozyczenie(Rower rower, StacjaRowerowa stacja) => this.historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
-
-        public double ZwrocSaldo() => this.saldo;
-
+        public List<Wypozyczenie> DodajWypozyczenie(Rower rower, StacjaRowerowa stacja)
+        {
+            this.historiaWypozyczen.Add(new Wypozyczenie(rower, stacja));
+            return this.historiaWypozyczen;
+        }
        
     }
 }

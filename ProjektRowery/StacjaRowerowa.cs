@@ -25,7 +25,7 @@ namespace ProjektRowery
     public class StacjaRowerowa
     {
 
-
+        public int id { get; private set; }
         public List<Rower> ListaRowerow { get; private set; }
         public int LiczbaMiejsc { get; private set; }
         public string NazwaStacji { get; private set; }
@@ -33,14 +33,23 @@ namespace ProjektRowery
 
         public int LiczbaWolnychMiejsc => LiczbaMiejsc - ListaRowerow.Count;
 
-        public StacjaRowerowa(int liczbaMiejsc, string nazwaStacji, string nazwaMiasta, List<Rower> poczatkoweRowery)
+        public StacjaRowerowa(int Id, int liczbaMiejsc, string nazwaStacji, string nazwaMiasta, List<Rower> poczatkoweRowery)
         {
+            id = Id;
             LiczbaMiejsc = liczbaMiejsc;
             ListaRowerow = poczatkoweRowery ?? new List<Rower>(); 
             NazwaStacji = nazwaStacji;
             NazwaMiasta = nazwaMiasta;
         }
 
+        public static void WyswietlWszystkieStacje(List<StacjaRowerowa> listaStacji)
+        {
+            Console.WriteLine("\nLista wszystkich stacji:");
+            foreach (var stacja in listaStacji)
+            {
+                Console.WriteLine($"ID: {stacja.id}, {stacja.NazwaStacji}, {stacja.NazwaMiasta} – {stacja.LiczbaWolnychMiejsc} wolnych miejsc");
+            }
+        }
         public void UsunZListyDostepnych(Rower rower)
         {
             if (ListaRowerow.Contains(rower))
@@ -79,7 +88,7 @@ namespace ProjektRowery
 
         public void WyswietlDostepneRowery()
         {
-            Console.WriteLine($"\nDostępne rowery na stacji {NazwaStacji} ({NazwaMiasta}):");
+            Console.WriteLine($"\nDostępne rowery na stacji {NazwaStacji} ({NazwaMiasta}) | ID stacji: {id}:");
             foreach (var rower in ListaRowerow)
             {
                 Console.WriteLine($"ID: {rower.id}, Typ: {rower.type()}, Marka: {rower.Marka()}");

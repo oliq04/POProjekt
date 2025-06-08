@@ -5,18 +5,11 @@ IDisplay display = new TerminalDisplay();
 
 List<Uzytkownik> listaUzytkownikow = [];
 List<StacjaRowerowa> ListaStacji = [
-    new(5, "Centrum", "Warszawa", [new(1, Typ.standardowy, "Trek"), new(2, Typ.elektryczny, "Giant") ]),
-            new(4, "Dworzec", "Warszawa", [new(3, Typ.standardowy, "Kross"), new(4, Typ.elektryczny, "Specialized") ])
+    new(1, 5, "Centrum", "Warszawa", [new(1, Typ.standardowy, "Trek"), new(2, Typ.elektryczny, "Giant") ]),
+    new(2, 4, "Dworzec", "Warszawa", [new(3, Typ.standardowy, "Kross"), new(4, Typ.elektryczny, "Specialized") ])
 ];
 
-void WyswietlWszystkieStacje()
-{
-    Console.WriteLine("\nLista wszystkich stacji:");
-    foreach (var stacja in ListaStacji)
-    {
-        Console.WriteLine($"{stacja.NazwaStacji}, {stacja.NazwaMiasta} – {stacja.LiczbaWolnychMiejsc} wolnych miejsc");
-    }
-}
+
 
 Uzytkownik Tomasz = new Uzytkownik("Tomasz", "Problem");
 listaUzytkownikow.Add(Tomasz);
@@ -85,7 +78,7 @@ while (aplikacjaAktywna)
                             userService.WyswietlHistorie(zalogowanyUser);
                             break;
                         case 3:
-                            WyswietlWszystkieStacje();
+                            StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
                             Console.WriteLine("Wybierz numer stacji:");
                             int.TryParse(Console.ReadLine(), out int numerStacji);
 
@@ -100,12 +93,7 @@ while (aplikacjaAktywna)
                                 Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
                                 if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
                                 {
-                                    rowerService.Wypozycz(wybranyRower, wybranaStacja, zalogowanyUser);
-                                    //wybranaStacja.UsunZListyDostepnych(wybranyRower); //tutaj nie jest wogle zmieniany status
-
-
-
-
+                                    rowerService.Wypozycz(wybranyRower, wybranaStacja, zalogowanyUser, userService);
                                 }
                                 else
                                 {
@@ -125,7 +113,7 @@ while (aplikacjaAktywna)
                             if (aktywneWypozyczenie != null)
                             {
                                 Rower rower = aktywneWypozyczenie.rower;
-                                WyswietlWszystkieStacje();
+                                StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
                                 Console.WriteLine("Wybierz numer stacji do zwrotu:");
                                 int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
 
@@ -159,7 +147,7 @@ while (aplikacjaAktywna)
             break;
 
         case 3:
-            WyswietlWszystkieStacje();
+            StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
             break;
 
         case 4:
