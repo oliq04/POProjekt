@@ -8,23 +8,19 @@ namespace ProjektRowery
 {
     class Platnosc
     {
-        private int czas_w_min;
-        private Typ typRoweru;
 
-        public Platnosc(Typ typRoweru, int czas_w_min)
+        public Platnosc()
         {
-            this.typRoweru = typRoweru;
-            this.czas_w_min = czas_w_min;
         }
 
 
-        public double ObliczKwote()
+        public double ObliczKwote(string bike, int czas_w_min)
         {
-            if (typRoweru == Typ.standardowy)
+            if (bike=="standardowy")
             {
                 return 0.5 * czas_w_min;
             }
-            else if (typRoweru == Typ.elektryczny)
+            else if (bike == "elektryczny")
             {
                 return 0.8 * czas_w_min;
             }
