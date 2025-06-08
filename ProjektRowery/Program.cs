@@ -1,9 +1,6 @@
 ﻿using ProjektRowery;
 using System.Diagnostics;
 
-
-IDisplay display = new TerminalDisplay();
-
 List<Uzytkownik> listaUzytkownikow = [];
 List<StacjaRowerowa> ListaStacji = [
     new(1, 5, "Centrum", "Warszawa", [new(1, Typ.standardowy, "Trek"), new(2, Typ.elektryczny, "Giant") ]),
@@ -52,11 +49,11 @@ while (aplikacjaAktywna)
             nazwisko = GetName("nazwisko");
             RowerService rowerService = new RowerService();
             UzytkownikService userService = new UzytkownikService();
-            Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.imie == imie && user.nazwisko == nazwisko);
+            Uzytkownik? zalogowanyUser = listaUzytkownikow.Find(user => user.GetImie() == imie && user.GetImie() == nazwisko);
 
             if (zalogowanyUser is not null)
             {
-                Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.imie}!");
+                Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.GetImie}!");
 
                 bool aktywneMenu = true;
                 while (aktywneMenu)

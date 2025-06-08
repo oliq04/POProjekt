@@ -10,14 +10,10 @@ namespace ProjektRowery
     {
         private static int ostatnieId = 0;
         private int id;
-        public string imie { get; private set; }
-        public string nazwisko { get; private set; }
-        public List<Wypozyczenie> historiaWypozyczen { get; private set; }
-
-        public double saldo { get; set; }
-
-
-
+        private string imie;
+        private string nazwisko;
+        private List<Wypozyczenie> historiaWypozyczen;
+        private double saldo;
         public Uzytkownik(string imie, string nazwisko)
         {
             this.id = ostatnieId++;
@@ -27,22 +23,24 @@ namespace ProjektRowery
             this.saldo = 0.0;
         }
 
+        public int GetID() => id;
+        public string GetImie() => imie;
+        public string GetNazwisko() => nazwisko;
+        public double GetSaldo() => saldo;
+        public List<Wypozyczenie> GetHistoriaWypozyczen() => historiaWypozyczen;
 
-        public void ZwiekszSaldo(double kwota)
+        public void SetImie(string noweImie) => imie = noweImie;
+
+        public void SetNazwisko(string noweNazwisko) => nazwisko = noweNazwisko;
+
+        public void setSaldo(double noweSaldo)
         {
-            if (kwota <= 0)
-                throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
-            saldo += kwota;
+            if (noweSaldo < 0)
+            {
+                throw new ArgumentException("Saldo nie może być ujemne!", nameof(noweSaldo));
+            }
+            saldo = noweSaldo;
         }
-
-        public void ZmniejszSaldo(double kwota)
-        {
-            if (kwota <= 0)
-                throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
-            saldo -= kwota;
-        }
-        public double ZwrocSaldo() => this.saldo;
-
         public List<Wypozyczenie> ShowHistory() => this.historiaWypozyczen;
         public List<Wypozyczenie> DodajWypozyczenie(Rower rower, StacjaRowerowa stacja)
         {

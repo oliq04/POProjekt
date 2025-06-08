@@ -55,7 +55,7 @@ namespace ProjektRowery
                 rower.UstawStatus(StatusRoweru.dostepny);
                 stacja.DodajDoListyDostepnych(rower);
 
-                var ostatnieWypozyczenie = user.historiaWypozyczen.LastOrDefault(wypozyczenie => wypozyczenie.rower == rower && wypozyczenie.czasZwrotu == null);
+                var ostatnieWypozyczenie = user.GetHistoriaWypozyczen().LastOrDefault(wypozyczenie => wypozyczenie.rower == rower && wypozyczenie.czasZwrotu == null);
                 if (ostatnieWypozyczenie != null)
                 {
                     ostatnieWypozyczenie.ZakonczWypozyczenie();

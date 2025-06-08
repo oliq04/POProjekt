@@ -16,36 +16,42 @@ namespace ProjektRowery
 
         public double ZwrocSaldo(Uzytkownik user)
         {
-            return user.saldo;
+            return user.GetSaldo();
         }
 
         public void WypiszSaldo(Uzytkownik user)
         {
-            Console.WriteLine($"Saldo użytkownika {user.imie} {user.nazwisko}: {user.saldo} zł");
+            Console.WriteLine($"Saldo użytkownika {user.GetImie()} {user.GetNazwisko()}: {user.GetSaldo()} zł");
         }
 
         public void DodajSaldo(Uzytkownik user, double kwota)
         {
-            user.ZwiekszSaldo(kwota);
-            Console.WriteLine($"Dodano {kwota} zł. Nowe saldo: {user.ZwrocSaldo()} zł");
+            if (kwota <= 0)
+                throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
+
+            user.setSaldo(user.GetSaldo() + kwota);
+            Console.WriteLine($"Dodano {kwota} zł. Nowe saldo: {user.GetSaldo()} zł");
         }
 
         public void Oplac(Uzytkownik user, double kwota)
         {
-            user.ZmniejszSaldo(kwota);
-            Console.WriteLine($"Zmniejszono saldo o {kwota} zł. Nowe saldo: {user.ZwrocSaldo()} zł");
+            if (kwota <= 0)
+                throw new ArgumentException("Kwota musi być większa od zera.", nameof(kwota));
+
+            user.setSaldo(user.GetSaldo() - kwota);
+            Console.WriteLine($"Zmniejszono saldo o {kwota} zł. Nowe saldo: {user.GetSaldo()} zł");
         }
         public void WyswietlHistorie(Uzytkownik user)
         {
-            Console.WriteLine($"Historia wypożyczeń użytkownika {user.imie} {user.nazwisko}:");
+            Console.WriteLine($"Historia wypożyczeń użytkownika {user.GetImie()} {user.GetNazwisko()}:");
 
-            if (user.ShowHistory().Count == 0)
+            if (user.GetHistoriaWypozyczen().Count == 0)
             {
                 Console.WriteLine("Brak wypożyczeń.");
                 return;
             }
 
-            foreach (var wypozyczenie in user.ShowHistory())
+            foreach (var wypozyczenie in user.GetHistoriaWypozyczen())
             {
                 string statusZwrotu = wypozyczenie.czasZwrotu == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.czasZwrotu}";
                 Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.type()}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
@@ -60,10 +66,8 @@ namespace ProjektRowery
                 return;
             }
 
-            Wypozyczenie noweWypozyczenie = new Wypozyczenie(rower, stacja);
-            user.historiaWypozyczen.Add(noweWypozyczenie);
-
-            Console.WriteLine($"✔️ Dodano wypożyczenie roweru ID {rower.id} dla użytkownika {user.imie} {user.nazwisko} ze stacji {stacja.NazwaStacji} | ID stacji: {stacja.id}.");
+            user.DodajWypozyczenie(rower, stacja);
+            Console.WriteLine($"Dodano wypożyczenie roweru ID {rower.id} dla użytkownika {user.GetImie()} {user.GetNazwisko()} ze stacji {stacja.NazwaStacji} | ID stacji: {stacja.id}.");
         }
     }
 }
