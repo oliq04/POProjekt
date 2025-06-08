@@ -31,7 +31,7 @@ namespace ProjektRowery
             foreach (var wypozyczenie in user.ShowHistory())
             {
                 string statusZwrotu = wypozyczenie.czasZwrotu == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.czasZwrotu}";
-                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.type}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
+                Console.WriteLine($"Rower ID: {wypozyczenie.rower.id}, Typ: {wypozyczenie.rower.type()}, Wypożyczono: {wypozyczenie.czasWypozyczenia}, {statusZwrotu}");
             }
         }
 
