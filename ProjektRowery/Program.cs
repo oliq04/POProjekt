@@ -14,6 +14,7 @@ List<StacjaRowerowa> ListaStacji = [
 Uzytkownik Tomasz = new Uzytkownik("Tomasz", "Problem");
 listaUzytkownikow.Add(Tomasz);
 
+
 bool aplikacjaAktywna = true;
 
 while (aplikacjaAktywna)
@@ -73,6 +74,16 @@ while (aplikacjaAktywna)
                     {
                         case 1:
                             userService.WypiszSaldo(zalogowanyUser);
+                            /* 1) Stwórz instancję serwisu
+                            var uzytkownikService = new UzytkownikService();
+                            
+                            // 2) Wywołaj metodę
+                            uzytkownikService.WypiszSaldo(Tomasz);
+                            uzytkownikService.DodajSaldo(Tomasz, 50.0);
+                            uzytkownikService.WypiszSaldo(Tomasz);
+                            uzytkownikService.Oplac(Tomasz, 60.0);
+                            uzytkownikService.WypiszSaldo(Tomasz);
+                            */
                             break;
                         case 2:
                             userService.WyswietlHistorie(zalogowanyUser);
@@ -169,4 +180,4 @@ static string GetName(string displayName)
             : $"Podaj {displayName}:");
     while (string.IsNullOrWhiteSpace(value = Console.ReadLine() ?? string.Empty));
     return value;
-}
+}*/

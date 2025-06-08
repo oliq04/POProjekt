@@ -23,6 +23,18 @@ namespace ProjektRowery
         {
             Console.WriteLine($"Saldo użytkownika {user.imie} {user.nazwisko}: {user.saldo} zł");
         }
+
+        public void DodajSaldo(Uzytkownik user, double kwota)
+        {
+            user.ZwiekszSaldo(kwota);
+            Console.WriteLine($"Dodano {kwota} zł. Nowe saldo: {user.ZwrocSaldo()} zł");
+        }
+
+        public void Oplac(Uzytkownik user, double kwota)
+        {
+            user.ZmniejszSaldo(kwota);
+            Console.WriteLine($"Zmniejszono saldo o {kwota} zł. Nowe saldo: {user.ZwrocSaldo()} zł");
+        }
         public void WyswietlHistorie(Uzytkownik user)
         {
             Console.WriteLine($"Historia wypożyczeń użytkownika {user.imie} {user.nazwisko}:");
