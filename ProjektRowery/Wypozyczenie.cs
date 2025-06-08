@@ -36,7 +36,11 @@ namespace ProjektRowery
             if (czasZwrotu != null)
             {
                 var span = (DateTime)czasZwrotu - czasWypozyczenia;
-                return (int)span.TotalMinutes;
+                if ((int)span.TotalMinutes <= 30) { return 0; }
+                else
+                {
+                    return (int)span.TotalMinutes - 30;
+                }
             }
             else
             {

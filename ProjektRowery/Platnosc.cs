@@ -18,11 +18,11 @@ namespace ProjektRowery
         {
             if (bike=="standardowy")
             {
-                return 0.5 * czas_w_min;
+                return 0.5 * czas_w_min + 10;
             }
             else if (bike == "elektryczny")
             {
-                return 1 * czas_w_min;
+                return 1 * czas_w_min + 20;
             }
             else
             {
