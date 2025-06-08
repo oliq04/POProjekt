@@ -1,4 +1,5 @@
 ﻿using ProjektRowery;
+using System.Diagnostics;
 
 
 IDisplay display = new TerminalDisplay();
@@ -62,11 +63,12 @@ while (aplikacjaAktywna)
                 {
                     Console.WriteLine("\nCo chcesz zrobić?");
                     Console.WriteLine("1. Wyświetlić saldo");
-                    Console.WriteLine("2. Wyświetlić historię wypożyczeń");
-                    Console.WriteLine("3. Wypożyczyć rower");
-                    Console.WriteLine("4. Zwrócić rower");
-                    Console.WriteLine("5. Zgłosić usterkę roweru");
-                    Console.WriteLine("6. Wyloguj się");
+                    Console.WriteLine("2. Dodać środki do salda");
+                    Console.WriteLine("3. Wyświetlić historię wypożyczeń");
+                    Console.WriteLine("4. Wypożyczyć rower");
+                    Console.WriteLine("5. Zwrócić rower");
+                    Console.WriteLine("6. Zgłosić usterkę roweru");
+                    Console.WriteLine("7. Wyloguj się");
 
                     int.TryParse(Console.ReadLine(), out int wyborAkcji);
 
@@ -74,21 +76,37 @@ while (aplikacjaAktywna)
                     {
                         case 1:
                             userService.WypiszSaldo(zalogowanyUser);
-                            /* 1) Stwórz instancję serwisu
-                            var uzytkownikService = new UzytkownikService();
-                            
-                            // 2) Wywołaj metodę
-                            uzytkownikService.WypiszSaldo(Tomasz);
-                            uzytkownikService.DodajSaldo(Tomasz, 50.0);
-                            uzytkownikService.WypiszSaldo(Tomasz);
-                            uzytkownikService.Oplac(Tomasz, 60.0);
-                            uzytkownikService.WypiszSaldo(Tomasz);
-                            */
                             break;
                         case 2:
-                            userService.WyswietlHistorie(zalogowanyUser);
+                            double kwota;
+                            bool success = false;
+                            for (int i = 0; i < 3; i++)
+                            {
+                                Console.Write("Podaj kwotę do dodania do salda: ");
+                                string? input = Console.ReadLine();
+                                if (double.TryParse(input, out kwota) && kwota>0)
+                                {
+                                    userService.DodajSaldo(zalogowanyUser, kwota);
+                                    success = true;
+                                    break;
+                                }
+                                else
+                                {Console.WriteLine("To nie jest poprawna liczba. Spróbuj ponownie.");}
+                            }
+                            if (!success)
+                            {Console.WriteLine("Przekroczono liczbę prób. Nie dodano nic do salda.");}
                             break;
                         case 3:
+                            userService.WyswietlHistorie(zalogowanyUser);
+                            break;
+                        case 4:
+                            double saldo = userService.ZwrocSaldo(zalogowanyUser);
+                            if (saldo < 60)
+                            {
+                                userService.WypiszSaldo(zalogowanyUser);
+                                Console.WriteLine("Nie masz wystarczającego salda, aby wypożyczyć rower. Minimalne saldo to 60 zł.");
+                                break;
+                            }
                             StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
                             Console.WriteLine("Wybierz numer stacji:");
                             int.TryParse(Console.ReadLine(), out int numerStacji);
@@ -102,7 +120,7 @@ while (aplikacjaAktywna)
                                 int.TryParse(Console.ReadLine(), out int idRoweru);
 
                                 Rower wybranyRower = wybranaStacja.ListaRowerow.FirstOrDefault(rower => rower.id == idRoweru);
-                                if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower))
+                                if (wybranyRower != null && wybranaStacja.czyMoznaWypozyczycRower(wybranyRower) )
                                 {
                                     rowerService.Wypozycz(wybranyRower, wybranaStacja, zalogowanyUser, userService);
                                 }
@@ -113,7 +131,7 @@ while (aplikacjaAktywna)
                             }
                             break;
 
-                        case 4:
+                        case 5:
                             
                             userService.WyswietlHistorie(zalogowanyUser);
                             Console.WriteLine("Podaj ID roweru do zwrotu:");
@@ -138,10 +156,10 @@ while (aplikacjaAktywna)
                                 }
                             }
                             break;
-                        case 5:
+                        case 6:
                             Console.WriteLine("Tutaj dodamy funkcję.");
                             break;
-                        case 6:
+                        case 7:
                             aktywneMenu = false;
                             Console.WriteLine("Wylogowano.");
                             break;
@@ -180,4 +198,4 @@ static string GetName(string displayName)
             : $"Podaj {displayName}:");
     while (string.IsNullOrWhiteSpace(value = Console.ReadLine() ?? string.Empty));
     return value;
-}*/
+}

@@ -1,4 +1,4 @@
-﻿{
+{
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\",
   "Documents": [
@@ -7,32 +7,16 @@
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\platnosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:platnosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\terminaldisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:terminaldisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\bartek\\desktop\\ppo\\poprojekt\\projektrowery\\rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,8 +25,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 204,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 238,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,112 +42,60 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAYwGUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T16:57:05.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Uzytkownik.cs",
+              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "RelativeDocumentMoniker": "Uzytkownik.cs",
+              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "RelativeToolTip": "Uzytkownik.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T16:55:57.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Platnosc.cs",
               "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Platnosc.cs",
               "RelativeDocumentMoniker": "Platnosc.cs",
               "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Platnosc.cs",
               "RelativeToolTip": "Platnosc.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-08T16:03:10.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UzytkownikService.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
-              "RelativeDocumentMoniker": "UzytkownikService.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs*",
-              "RelativeToolTip": "UzytkownikService.cs*",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwBwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:03:16.084Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 196,
+          "DockedWidth": 238,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAAB8AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:01:45.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Uzytkownik.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
-              "RelativeDocumentMoniker": "Uzytkownik.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
-              "RelativeToolTip": "Uzytkownik.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAYwCkAAAAhAAAAAAAAAA==",
+              "Title": "UzytkownikService.cs",
+              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
+              "RelativeDocumentMoniker": "UzytkownikService.cs",
+              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
+              "RelativeToolTip": "UzytkownikService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:02:48.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StacjaRowerowa.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
-              "RelativeDocumentMoniker": "StacjaRowerowa.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
-              "RelativeToolTip": "StacjaRowerowa.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:34:08.305Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TerminalDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\TerminalDisplay.cs",
-              "RelativeDocumentMoniker": "TerminalDisplay.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\TerminalDisplay.cs",
-              "RelativeToolTip": "TerminalDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:34:39.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RowerService.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\RowerService.cs",
-              "RelativeDocumentMoniker": "RowerService.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\RowerService.cs",
-              "RelativeToolTip": "RowerService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:29:46.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Rower.cs",
-              "DocumentMoniker": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Rower.cs",
-              "RelativeDocumentMoniker": "Rower.cs",
-              "ToolTip": "C:\\Users\\Bartek\\Desktop\\PPO\\POProjekt\\ProjektRowery\\Rower.cs",
-              "RelativeToolTip": "Rower.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:01:45.432Z",
+              "WhenOpened": "2025-06-08T16:03:16.084Z",
               "EditorCaption": ""
             }
           ]
