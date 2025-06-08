@@ -31,16 +31,17 @@ namespace ProjektRowery
           
         }
 
-        public TimeSpan ObliczCzas()
+        public int ObliczCzas()
         {
             if (czasZwrotu != null)
             {
-                return ((DateTime)czasZwrotu - czasWypozyczenia);
+                var span = (DateTime)czasZwrotu - czasWypozyczenia;
+                return (int)span.TotalMinutes;
             }
             else
             {
                 Console.WriteLine("Rower nie został jeszcze zwrócony.");
-                return TimeSpan.Zero;
+                return 0;
             }
         }
     }

@@ -67,8 +67,7 @@ while (aplikacjaAktywna)
                     Console.WriteLine("3. Wyświetlić historię wypożyczeń");
                     Console.WriteLine("4. Wypożyczyć rower");
                     Console.WriteLine("5. Zwrócić rower");
-                    Console.WriteLine("6. Zgłosić usterkę roweru");
-                    Console.WriteLine("7. Wyloguj się");
+                    Console.WriteLine("6. Wyloguj się");
 
                     int.TryParse(Console.ReadLine(), out int wyborAkcji);
 
@@ -132,12 +131,10 @@ while (aplikacjaAktywna)
                             break;
 
                         case 5:
-                            
                             userService.WyswietlHistorie(zalogowanyUser);
                             Console.WriteLine("Podaj ID roweru do zwrotu:");
                             int.TryParse(Console.ReadLine(), out int idZwrotu);
-
-                            Wypozyczenie aktywneWypozyczenie = zalogowanyUser.ShowHistory().Find(w => w.rower.id == idZwrotu);
+                            Wypozyczenie aktywneWypozyczenie =zalogowanyUser.ShowHistory().Find(w => w.rower.id == idZwrotu);
 
                             if (aktywneWypozyczenie != null)
                             {
@@ -148,18 +145,52 @@ while (aplikacjaAktywna)
 
                                 if (numerStacjiZwrot >= 1 && numerStacjiZwrot <= ListaStacji.Count)
                                 {
-                                    StacjaRowerowa stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
+                                    Console.WriteLine("Czy doszło do jakiejś usterki T/N");
+                                    bool oczekujOdp = true;
+                                    while (oczekujOdp)
+                                    {
+                                        char odp = Console.ReadKey().KeyChar;
+                                        var stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
 
-                                    rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
+                                        if (odp == 'T' || odp == 't')
+                                        {
+                                            aktywneWypozyczenie.ZakonczWypozyczenie();
+                                            rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
+                                            rowerService.ZglosUsterke(rower);
+                                            oczekujOdp = false;
+                                            Console.WriteLine("\nUsterka zgłoszona. Rower zostanie przekazany do serwisu.");
+                                        }
+                                        else if (odp == 'N' || odp == 'n')
+                                        {
+                                            aktywneWypozyczenie.ZakonczWypozyczenie();
+                                            rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
+                                            oczekujOdp = false;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("\nNiepoprawna odpowiedź. Wpisz T lub N.");
+                                        }
+                                    }
 
-                                   
+                                    int czasWMinutach = aktywneWypozyczenie.ObliczCzas();
+                                    Console.WriteLine($"Czas wypożyczenia: {czasWMinutach} minut");
+
+                                    var platnoscService = new Platnosc();
+
+                                    string typRoweru = rowerService.ZwrocTypEnum(aktywneWypozyczenie.rower).ToString();
+
+                                    double zaplata = platnoscService.ObliczKwote(typRoweru, czasWMinutach);
+                                    Console.WriteLine($"Do zapłaty: {zaplata} zł");
+                                    userService.Oplac(zalogowanyUser, zaplata);
                                 }
                             }
+                            else
+                            {
+                                Console.WriteLine("Nie znaleziono aktywnego wypożyczenia o podanym ID.");
+                            }
                             break;
+
                         case 6:
-                            Console.WriteLine("Tutaj dodamy funkcję.");
-                            break;
-                        case 7:
                             aktywneMenu = false;
                             Console.WriteLine("Wylogowano.");
                             break;
