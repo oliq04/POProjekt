@@ -14,7 +14,7 @@ namespace ProjektRowery
     public class Rower
     {
         public int id;
-        public Typ typ;
+        private Typ typ;
         private StatusRoweru status;
         private string marka;
        
@@ -26,55 +26,12 @@ namespace ProjektRowery
             this.marka = marka;
         }
 
-        public string Marka()
-        {
-            return this.marka;
-        }
+        public string Marka() => marka;
+        public StatusRoweru Status() => status;
 
-        public void Wypozycz()
-        {
-            if (this.status == StatusRoweru.dostepny)
-            {
-                
-                this.status = StatusRoweru.wypozyczony;
+        public void UstawStatus(StatusRoweru nowyStatus) => status = nowyStatus;
 
-                Console.WriteLine("\nPomyślnie wypożyczono rower!");
+        public Typ type() => typ;
 
-            }
-            else
-            {
-                Console.WriteLine("\nRower nie jest dostępny do wypożyczenia.");
-            }
-        }
-
-        public string SprawdzStan()
-        {
-            return $"{this.status}";
-        }
-
-        public void ZglosUsterke()
-        {
-            this.status = StatusRoweru.serwisowany;
-        }
-
-        public void zwrocRower()
-        {
-            if (this.status == StatusRoweru.wypozyczony)
-            {
-                this.status = StatusRoweru.dostepny;
-                Console.WriteLine("Zwrocono rower");
-
-               
-            }
-            else
-            {
-                Console.WriteLine("\nBłąd, nie mozesz zwrocic dostępnego roweru"); // tu wyrzucić wyjątek
-            }
-
-        }
-        public Typ ZwrocTypEnum()
-        {
-            return this.typ;
-        }
     }
 }
