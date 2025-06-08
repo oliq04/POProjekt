@@ -49,7 +49,7 @@ namespace ProjektRowery
                 return;
             }
 
-            user.GetHistoriaWypozyczen().Add(new Wypozyczenie(rower, stacja));
+            user.GetHistoriaWypozyczen().Add(new Wypozyczenie(rower));
             Console.WriteLine($"Dodano wypożyczenie roweru ID {rower.GetId()} dla użytkownika {user.GetImie()} {user.GetNazwisko()} ze stacji {stacja.GetId()} | ID stacji: {stacja.GetId()}.");
         }
 

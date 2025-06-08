@@ -9,44 +9,43 @@ namespace ProjektRowery
 {
     public class Wypozyczenie
     {
-        public DateTime czasWypozyczenia { get; private set; } // Tylko odczyt
-        public DateTime? czasZwrotu { get; private set; } // Teraz dostępne do odczytu!
-        public Rower rower { get; private set; } // Publiczny dostęp do roweru
+        private DateTime czasWypozyczenia;
+        private DateTime? czasZwrotu;
+        private Rower rower;
 
-        public Wypozyczenie(Rower rower, StacjaRowerowa stacjaRowerowa)
+        public Wypozyczenie(Rower rower)
         {
             this.rower = rower;
             this.czasWypozyczenia = DateTime.Now;
             this.czasZwrotu = null;
         }
 
+        public DateTime GetCzasWypozyczenia() => czasWypozyczenia;
+        public DateTime? GetCzasZwrotu() => czasZwrotu;
+        public Rower GetRower() => rower;
         public void ZakonczWypozyczenie()
         {
             if (czasZwrotu == null)
             {
                 czasZwrotu = DateTime.Now;
-                
-                Console.WriteLine($"Wypożyczenie zakończone. Rower ID: {rower.id} zwrócono o {czasZwrotu}");
+                Console.WriteLine($"Wypożyczenie zakończone. Rower ID: {rower.GetId()} zwrócono o {czasZwrotu}");
             }
-          
+            else
+            {
+                Console.WriteLine("Wypożyczenie tego roweru już zostało zakończone.");
+            }
         }
 
         public int ObliczCzas()
         {
-            if (czasZwrotu != null)
-            {
-                var span = (DateTime)czasZwrotu - czasWypozyczenia;
-                if ((int)span.TotalMinutes <= 30) { return 0; }
-                else
-                {
-                    return (int)span.TotalMinutes - 30;
-                }
-            }
-            else
+            if (czasZwrotu == null)
             {
                 Console.WriteLine("Rower nie został jeszcze zwrócony.");
                 return 0;
             }
+
+            var czasTrwania = (DateTime)czasZwrotu - czasWypozyczenia;
+            return (int)czasTrwania.TotalMinutes <= 30 ? 0 : (int)czasTrwania.TotalMinutes - 30;
         }
     }
 }
