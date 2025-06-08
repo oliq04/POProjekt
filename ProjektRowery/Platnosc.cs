@@ -22,7 +22,7 @@ namespace ProjektRowery
             }
             else if (bike == "elektryczny")
             {
-                return 0.8 * czas_w_min;
+                return 1 * czas_w_min;
             }
             else
             {
