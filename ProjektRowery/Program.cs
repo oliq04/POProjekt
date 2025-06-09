@@ -33,15 +33,21 @@ while (aplikacjaAktywna)
             string imie = GetName("imię");
             string nazwisko = GetName("nazwisko");
 
-            try
-            {
-                listaUzytkownikow.Add(new(imie, nazwisko));
-                Console.WriteLine("Pomyślnie utworzono użytkownika.");
-            }
-            catch
-            {
-                Console.WriteLine("Błąd przy tworzeniu konta.");
-            }
+            
+                if(!(listaUzytkownikow.Any(user => user.GetImie() == imie && user.GetNazwisko() == nazwisko)))
+                {
+                    listaUzytkownikow.Add(new(imie, nazwisko));
+                    Console.WriteLine("Pomyślnie utworzono użytkownika.");
+
+                }
+
+                else
+                {
+                    Console.WriteLine("Błąd, uzytkownik istnieje");
+                    break;
+                }
+                
+          
             break;
 
         case 2:
