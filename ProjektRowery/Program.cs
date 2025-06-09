@@ -33,15 +33,21 @@ while (aplikacjaAktywna)
             string imie = GetName("imię");
             string nazwisko = GetName("nazwisko");
 
-            try
-            {
-                listaUzytkownikow.Add(new(imie, nazwisko));
-                Console.WriteLine("Pomyślnie utworzono użytkownika.");
-            }
-            catch
-            {
-                Console.WriteLine("Błąd przy tworzeniu konta.");
-            }
+            
+                if(!(listaUzytkownikow.Any(user => user.GetImie() == imie && user.GetNazwisko() == nazwisko)))
+                {
+                    listaUzytkownikow.Add(new(imie, nazwisko));
+                    Console.WriteLine("Pomyślnie utworzono użytkownika.");
+
+                }
+
+                else
+                {
+                    Console.WriteLine("Błąd, uzytkownik istnieje");
+                    break;
+                }
+                
+          
             break;
 
         case 2:
@@ -53,7 +59,7 @@ while (aplikacjaAktywna)
 
             if (zalogowanyUser is not null)
             {
-                Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.GetImie}!");
+                Console.WriteLine($"Logowanie przebiegło pomyślnie. Witaj, {zalogowanyUser.GetImie()}!");
 
                 bool aktywneMenu = true;
                 while (aktywneMenu)
@@ -172,7 +178,7 @@ while (aplikacjaAktywna)
 
                                     int czasWMinutach = aktywneWypozyczenie.ObliczCzas();
                                     Console.WriteLine($"Czas wypożyczenia: {czasWMinutach} minut");
-
+                                    if (czasWMinutach <= 30) { czasWMinutach = 0; } else { czasWMinutach -= 30; }
                                     var platnoscService = new Platnosc();
 
                                     string typRoweru = aktywneWypozyczenie.GetRower().GetTyp().ToString();
