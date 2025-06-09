@@ -7,9 +7,9 @@ Spis treści
 3. Instrukcja użytkownika
 
 
-==============================
+------------------------------
 Opis systemu
-==============================
+------------------------------
 System zarządzania rowerami na stacjach rowerowych to aplikacja konsolowa w języku C#, która pozwala na:
 -rejestrację użytkownika
 -logowanie użytkownika
@@ -23,17 +23,17 @@ System zarządzania rowerami na stacjach rowerowych to aplikacja konsolowa w ję
 -wyświetlania cen usług
 
 
-==============================
+------------------------------
 Instrukcja uruchomienia
-==============================
+------------------------------
 1. Wejdź w folder /bin/Debug/net8.0/
 2. Otwórz plik ProjektRowerowy.exe
 
-==============================
+------------------------------
 Instrukcja obsługi
-==============================
+------------------------------
 Główne menu
-==============================
+------------------------------
 Po uruchomieniu programu wyświetla się menu główne z następującymi opcjami:
 1. Utwórz nowe konto
 2. Zaloguj się
@@ -41,9 +41,10 @@ Po uruchomieniu programu wyświetla się menu główne z następującymi opcjami
 4. Zakończ działanie programu
 
 
-==============================
+------------------------------
 Podstawowe operacje (menu główne)
-==============================to:
+------------------------------
+to:
 -wybierz opcję 1 i naciśnij Enter,
 -wprowadź imię oraz nazwisko,
 -jeżeli dane są poprawne pojawi się komunikat „Pomyślnie utworzono użytkownika”.
@@ -62,9 +63,9 @@ Zakończ działanie programu:
 -program zakończy działanie.
 
 
-==============================
+------------------------------
 Menu użytkownika (po zalogowaniu)
-==============================
+------------------------------
 Po zalogowaniu się pojawia się menu użytkownika:
 1. Wyświetlić saldo
 2. Dodać środki do salda
