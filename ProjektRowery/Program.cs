@@ -137,66 +137,82 @@ while (aplikacjaAktywna)
                         case 5:
                             userService.WyswietlHistorie(zalogowanyUser);
                             Console.WriteLine("Podaj ID roweru do zwrotu:");
-                            int.TryParse(Console.ReadLine(), out int idZwrotu);
-                            Wypozyczenie aktywneWypozyczenie =zalogowanyUser.GetHistoriaWypozyczen().Find(w => w.GetRower().GetId() == idZwrotu);
 
-                            if (aktywneWypozyczenie != null)
+                            if (!int.TryParse(Console.ReadLine(), out int idZwrotu))
                             {
-                                Rower rower = aktywneWypozyczenie.GetRower();
-                                StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
-                                Console.WriteLine("Wybierz numer stacji do zwrotu:");
-                                int.TryParse(Console.ReadLine(), out int numerStacjiZwrot);
+                                Console.WriteLine("Błąd: Niepoprawny format ID.");
+                                break;
+                            }
 
-                                if (numerStacjiZwrot >= 1 && numerStacjiZwrot <= ListaStacji.Count)
+                            Wypozyczenie aktywneWypozyczenie = zalogowanyUser.GetHistoriaWypozyczen().Find(w => w.GetRower().GetId() == idZwrotu && w.GetCzasZwrotu() == null);
+
+                            if (aktywneWypozyczenie == null)
+                            {
+                                Console.WriteLine("Nie znaleziono aktywnego wypożyczenia dla podanego ID.");
+                                break;
+                            }
+
+                            Rower rower = aktywneWypozyczenie.GetRower();
+
+                            StacjaRowerowa.WyswietlWszystkieStacje(ListaStacji);
+                            Console.WriteLine("Wybierz numer stacji do zwrotu:");
+
+                            if (!int.TryParse(Console.ReadLine(), out int numerStacjiZwrot) || numerStacjiZwrot < 1 || numerStacjiZwrot > ListaStacji.Count)
+                            {
+                                Console.WriteLine("Błąd: Niepoprawny numer stacji.");
+                                break;
+                            }
+
+                            var stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
+
+                            Console.WriteLine("Czy doszło do jakiejś usterki? (T/N)");
+
+                            bool oczekujOdp = true;
+                            while (oczekujOdp)
+                            {
+                                char odp = Console.ReadKey().KeyChar;
+                                if (odp == 'T' || odp == 't')
                                 {
-                                    Console.WriteLine("Czy doszło do jakiejś usterki T/N");
-                                    bool oczekujOdp = true;
-                                    while (oczekujOdp)
-                                    {
-                                        char odp = Console.ReadKey().KeyChar;
-                                        var stacjaZwrotu = ListaStacji[numerStacjiZwrot - 1];
-
-                                        if (odp == 'T' || odp == 't')
-                                        {
-                                            aktywneWypozyczenie.ZakonczWypozyczenie();
-                                            rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
-                                            rowerService.ZglosUsterke(rower);
-                                            oczekujOdp = false;
-                                            Console.WriteLine("\nUsterka zgłoszona. Rower zostanie przekazany do serwisu.");
-                                        }
-                                        else if (odp == 'N' || odp == 'n')
-                                        {
-                                            aktywneWypozyczenie.ZakonczWypozyczenie();
-                                            rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
-                                            oczekujOdp = false;
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("\nNiepoprawna odpowiedź. Wpisz T lub N.");
-                                        }
-                                    }
-
-                                    int czasWMinutach = aktywneWypozyczenie.ObliczCzas();
-                                    Console.WriteLine($"Czas wypożyczenia: {czasWMinutach} minut");
-                                    if (czasWMinutach <= 30) { czasWMinutach = 0; } else { czasWMinutach -= 30; }
-                                    var platnoscService = new Platnosc();
-
-                                    string typRoweru = aktywneWypozyczenie.GetRower().GetTyp().ToString();
-
-                                    double zaplata = platnoscService.ObliczKwote(aktywneWypozyczenie.GetRower(), czasWMinutach);
-                                    Console.WriteLine($"Do zapłaty: {zaplata} zł");
-                                    userService.Oplac(zalogowanyUser, zaplata);
+                                    aktywneWypozyczenie.ZakonczWypozyczenie();
+                                    rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
+                                    rowerService.ZglosUsterke(rower);
+                                    oczekujOdp = false;
+                                    Console.WriteLine("\nUsterka zgłoszona. Rower przekazany do serwisu.");
                                 }
+                                else if (odp == 'N' || odp == 'n')
+                                {
+                                    aktywneWypozyczenie.ZakonczWypozyczenie();
+                                    rowerService.zwrocRower(rower, stacjaZwrotu, zalogowanyUser);
+                                    oczekujOdp = false;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nNiepoprawna odpowiedź. Wpisz T lub N.");
+                                }
+                            }
+
+                            int czasWMinutach = aktywneWypozyczenie.ObliczCzas();
+                            Console.WriteLine($"Czas wypożyczenia: {czasWMinutach} minut");
+
+                            if (czasWMinutach > 30)
+                            {
+                                czasWMinutach -= 30;
                             }
                             else
                             {
-                                Console.WriteLine("Nie znaleziono aktywnego wypożyczenia o podanym ID.");
+                                czasWMinutach = 0;
                             }
+
+                            var platnoscService = new Platnosc();
+                            double zaplata = platnoscService.ObliczKwote(aktywneWypozyczenie.GetRower(), czasWMinutach);
+                            Console.WriteLine($"Do zapłaty: {zaplata} zł");
+
+                            userService.Oplac(zalogowanyUser, zaplata);
                             break;
                         case 6:
                             Console.WriteLine("Cennik:");
                             Console.WriteLine("Standardowy rower pierwsze 30 min za 10 zł \n każda kolejna minuta za 0.50zł");
-                            Console.WriteLine("Elektryczny rower pierwsze 30 min za 20 zł \n każda kolejna minuta za 1zł);)");
+                            Console.WriteLine("Elektryczny rower pierwsze 30 min za 20 zł \n każda kolejna minuta za 1zł");
                             Console.WriteLine("Minimalne saldo do wypożyczenia: 60 zł");
                             break;
                         case 7:

@@ -1,50 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\",
+  "WorkspaceRootPath": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\terminaldisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:terminaldisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\wypozyczenie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\wypozyczenie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:wypozyczenie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\idisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:idisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownikservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\platnosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:uzytkownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:rowerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:stacjarowerowa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\xxxx\\source\\repos\\oliq04\\poprojekt\\projektrowery\\platnosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:platnosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|c:\\users\\oliwi\\desktop\\projektpo\\poprojekt\\projektrowery\\wpfdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD8C2980-D204-4BD5-B0A6-E6C6458B5519}|ProjektRowery.csproj|solutionrelative:wpfdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,8 +41,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 168,
-          "SelectedChildIndex": 11,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,157 +50,114 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TerminalDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\TerminalDisplay.cs",
-              "RelativeDocumentMoniker": "TerminalDisplay.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\TerminalDisplay.cs",
-              "RelativeToolTip": "TerminalDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAL8AAAAAAAAAAADwv80AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:52:50.903Z",
+              "WhenOpened": "2025-05-27T23:03:09.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Rower.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Rower.cs",
+              "RelativeDocumentMoniker": "Rower.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Rower.cs",
+              "RelativeToolTip": "Rower.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T12:33:46.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Uzytkownik.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
               "RelativeDocumentMoniker": "Uzytkownik.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Uzytkownik.cs",
               "RelativeToolTip": "Uzytkownik.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBcAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAQwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T16:55:57.448Z",
+              "WhenOpened": "2025-05-28T19:55:00.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "UzytkownikService.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
               "RelativeDocumentMoniker": "UzytkownikService.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\UzytkownikService.cs",
               "RelativeToolTip": "UzytkownikService.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAmwEQAAAC0AAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:29:49.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WpfDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\WpfDisplay.cs",
-              "RelativeDocumentMoniker": "WpfDisplay.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\WpfDisplay.cs",
-              "RelativeToolTip": "WpfDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:53:50.301Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Wypozyczenie.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Wypozyczenie.cs",
-              "RelativeDocumentMoniker": "Wypozyczenie.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Wypozyczenie.cs",
-              "RelativeToolTip": "Wypozyczenie.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwC8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:36:57.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\IDisplay.cs",
-              "RelativeDocumentMoniker": "IDisplay.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\IDisplay.cs",
-              "RelativeToolTip": "IDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T23:40:30.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Platnosc.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Platnosc.cs",
-              "RelativeDocumentMoniker": "Platnosc.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Platnosc.cs",
-              "RelativeToolTip": "Platnosc.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:36:56.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:52:31.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StacjaRowerowa.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
-              "RelativeDocumentMoniker": "StacjaRowerowa.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
-              "RelativeToolTip": "StacjaRowerowa.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:52:46.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RowerService.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\RowerService.cs",
-              "RelativeDocumentMoniker": "RowerService.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\RowerService.cs",
-              "RelativeToolTip": "RowerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:40:05.38Z",
+              "WhenOpened": "2025-06-08T12:20:33.623Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Rower.cs",
-              "DocumentMoniker": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Rower.cs",
-              "RelativeDocumentMoniker": "Rower.cs",
-              "ToolTip": "C:\\Users\\oliwi\\Desktop\\ProjektPO\\POProjekt\\ProjektRowery\\Rower.cs",
-              "RelativeToolTip": "Rower.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA9wAAAAAAAAAAAAAAAAA==",
+              "Title": "Wypozyczenie.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Wypozyczenie.cs",
+              "RelativeDocumentMoniker": "Wypozyczenie.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Wypozyczenie.cs",
+              "RelativeToolTip": "Wypozyczenie.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:52:33.128Z",
+              "WhenOpened": "2025-05-28T22:54:25.217Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RowerService.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\RowerService.cs",
+              "RelativeDocumentMoniker": "RowerService.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\RowerService.cs",
+              "RelativeToolTip": "RowerService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T11:50:17.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StacjaRowerowa.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
+              "RelativeDocumentMoniker": "StacjaRowerowa.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\StacjaRowerowa.cs",
+              "RelativeToolTip": "StacjaRowerowa.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA0wDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T22:06:15.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Platnosc.cs",
+              "DocumentMoniker": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Platnosc.cs",
+              "RelativeDocumentMoniker": "Platnosc.cs",
+              "ToolTip": "C:\\Users\\XXXX\\source\\repos\\oliq04\\POProjekt\\ProjektRowery\\Platnosc.cs",
+              "RelativeToolTip": "Platnosc.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T21:38:17.805Z"
             }
           ]
         }
