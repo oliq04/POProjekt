@@ -1,7 +1,7 @@
 Dokumentacja systemu wypożyczalni rowerów
-==============================
+------------------------------
 Spis treści
-==============================
+------------------------------
 1. Opis systemu
 2. Instrukcja uruchomienia
 3. Instrukcja użytkownika
