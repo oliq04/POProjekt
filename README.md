@@ -11,6 +11,7 @@ Spis treści
 Opis systemu
 ------------------------------
 System zarządzania rowerami na stacjach rowerowych to aplikacja konsolowa w języku C#, która pozwala na:
+
 -rejestrację użytkownika
 -logowanie użytkownika
 -sprawdzanie dostępności stacji z rowerami
