@@ -45,7 +45,7 @@ namespace ProjektRowery
             }
 
             var czasTrwania = (DateTime)czasZwrotu - czasWypozyczenia;
-            return (int)czasTrwania.TotalMinutes <= 30 ? 0 : (int)czasTrwania.TotalMinutes - 30;
+            return (int)czasTrwania.TotalMinutes;
         }
     }
 }

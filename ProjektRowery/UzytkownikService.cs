@@ -66,7 +66,7 @@ namespace ProjektRowery
             foreach (var wypozyczenie in user.GetHistoriaWypozyczen())
             {
                 string statusZwrotu = wypozyczenie.GetCzasZwrotu() == null ? "Wciąż wypożyczony" : $"Zwrócono {wypozyczenie.GetCzasZwrotu()}";
-                Console.WriteLine($"Rower ID: {wypozyczenie.GetRower().GetId()}, Typ: {wypozyczenie.GetRower().GetTyp()}, Wypożyczono: {wypozyczenie.GetCzasWypozyczenia()}, {statusZwrotu}");
+                Console.WriteLine($"Rower ID: {wypozyczenie.GetRower().GetId()}, Typ: {wypozyczenie.GetRower().GetTyp()}, Wypożyczono: {wypozyczenie.GetCzasWypozyczenia()}, Status: {statusZwrotu}");
             }
         }
     }
